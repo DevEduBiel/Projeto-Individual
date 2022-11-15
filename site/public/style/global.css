@@ -137,78 +137,32 @@ table {
     border-spacing: 0;
 }
 
-
-.imgIcons {
-    font-size: 35px;
-}
-
-.branco{
+.branco {
     color: rgba(233, 229, 229, 1);
 }
 
-.azul{
+.azul {
     color: rgba(1, 127, 204, 1);
 }
 
-.roxo{
+.roxo {
     color: rgba(115, 43, 203, 1);
 }
 
-.txtTitulo{
-    font-size: 80px;
-    font-family: 'Montserrat', sans-serif;
-    color: rgba(115, 43, 203, 1);
-    font-weight: bold;
-    line-height: 95%;
-    background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-        background-image: url(../assets/./Main.jpg);
-        mix-blend-mode: difference;
+/* ===== Scrollbar CSS ===== */
+
+* {
+    scrollbar-width: auto;
+    scrollbar-color: unset;
 }
 
-.txtSubTitulo {
-    font-size: 30px;
-    font-family: 'Montserrat', sans-serif;
-    color: rgba(1, 127, 204, 1);
-    font-weight: bold;
+*::-webkit-scrollbar {
+    width: 18px;
+    scroll-margin-left: 50;
 }
 
-.txtTexto {
-    font-size: 26px;
-    font-family: 'Montserrat', sans-serif;
-    color: rgb(0, 0, 0);
-    font-weight:500;
-}
+*::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    border: 2px solid rgba(115, 43, 203, 1);
 
-.txtSubTexto {
-    font-size: 18px;
-    font-family: 'Montserrat', sans-serif;
-    color: rgb(0, 0, 0);
-    font-weight: bold;
 }
-
-.texto {
-    display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: space-between;
-}
-.container {
-    width: 90%;
-    height: 100%;
-    display: flex;
-}
-
-.linhas {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.linhas .l {
-    width: 46%;
-    border-bottom: 3px solid rgba(1, 127, 204, 1);
-}
-

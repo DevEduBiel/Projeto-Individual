@@ -1,0 +1,114 @@
+@import url(./global.css);
+
+body {
+    background-size: 100vw;
+    background-repeat: no-repeat;
+    background-image: url(../assets/cadastro.png);
+}
+
+input{
+    text-decoration: none;
+    background-color: rgb(0, 136, 255,0);
+    border-radius: 20px;
+    width: 410px;
+    height: 40px;
+    border: 2px solid rgba(115, 43, 203, 1);
+    margin-left: -5%;
+}
+
+.campos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 27%;
+   
+}
+
+.input{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 45%;
+}
+
+.mostra{
+    display: flex;
+    justify-content: space-between;
+    background-color: aqua;
+    width: 300px;
+}
+
+.bloco {
+    display: flex;
+    width: 1000px;
+    height: 580px;
+    border-radius: 20px;
+    background-color: rgba(233, 229, 229, 1);
+}
+
+.dados{
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    height: 100%;
+    justify-content: center;
+    padding-left: 9%;
+}
+
+.imagem{
+    width: 45%;
+    height: 100%;
+    border-radius: 0px 20px 20px 0px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 110%;
+    background-image: url(../assets/login.png);
+}
+
+.input{
+    display: flex;
+    flex-direction: column;
+}
+
+.txtTitulo {
+    font-size: 54px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgba(115, 43, 203, 1);
+    font-weight: bold;
+}
+
+.txtSubTitulo {
+    font-size: 22px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgba(1, 127, 204, 1);
+    font-weight: bold;
+}
+
+.txtTexto {
+    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    line-height: 120%;
+}
+
+.txtSubTexto {
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+}
+
+#login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+#login .titulo{
+    display: flex;
+    flex-direction: column;
+
+}
