@@ -3,71 +3,103 @@
 body {
     background-size: 100vw;
     background-repeat: no-repeat;
-    background-image: url(../assets/cadastro.png);
+    background-image: url(../assets/registro.png);
 }
 
-input{
+input {
     text-decoration: none;
-    background-color: rgb(0, 136, 255,0);
+    background-color: rgb(0, 136, 255, 0);
     border-radius: 20px;
     width: 410px;
     height: 40px;
     border: 2px solid rgba(115, 43, 203, 1);
-    margin-left: -5%;
+    font-size: 20px;
+    
+}
+
+button {
+    border-radius: 20px;
+    width: 150px;
+    height: 50px;
+}
+
+.mostra input {
+    width: 25px;
+    border-radius: 20px;
 }
 
 .campos {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 27%;
-   
 }
 
-.input{
+.input {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 45%;
 }
 
-.mostra{
+.mostra {
     display: flex;
     justify-content: space-between;
-    background-color: aqua;
-    width: 300px;
+    align-items: center;
+    width: 175px;
 }
 
 .bloco {
     display: flex;
+    align-items: center;
     width: 1000px;
     height: 580px;
     border-radius: 20px;
     background-color: rgba(233, 229, 229, 1);
 }
 
-.dados{
+.dados {
     display: flex;
     flex-direction: column;
-    width: 48%;
-    height: 100%;
-    justify-content: center;
-    padding-left: 9%;
+    width: 47%;
+    height: 87%;
+    justify-content: space-between;
+    padding-left: 6%;
 }
 
-.imagem{
-    width: 45%;
+.imagem {
+    width: 48%;
     height: 100%;
     border-radius: 0px 20px 20px 0px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 110%;
-    background-image: url(../assets/login.png);
+    border-left: 2px solid rgba(115, 43, 203, 1);
 }
 
-.input{
+.input {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+}
+
+.limite{
+    width: 80%;
+}
+
+.botao{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    padding-left: 37%;
+}
+
+.titulo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 30%;
+
 }
 
 .txtTitulo {
@@ -85,21 +117,20 @@ input{
 }
 
 .txtTexto {
-    font-size: 24px;
-    font-family: 'Montserrat', sans-serif;
-    color: rgb(0, 0, 0);
-    font-weight: 500;
-    line-height: 120%;
-}
-
-.txtSubTexto {
     font-size: 18px;
     font-family: 'Montserrat', sans-serif;
     color: rgb(0, 0, 0);
     font-weight: 500;
 }
 
-#login {
+.txtSubTexto {
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(0, 0, 0);
+    font-weight: 400;
+}
+
+.tela {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -107,8 +138,42 @@ input{
     width: 100vw;
 }
 
-#login .titulo{
+#login .imagem{
+    background-image: url(../assets/login.png);
+}
+
+#login .campos{
+    height: 45%;
+}
+
+#cadastro .imagem {
+    background-image: url(../assets/cadastro.jpg);
+}
+
+#cadastro .campos {
+    height: 60%;
+}
+
+#informacoes .imagem {
+    background-image: url(../assets/informacoes.jpg);
+}
+
+#informacoes .campos {
+    height: 52%;
+}
+
+#informacoes .metade {
     display: flex;
-    flex-direction: column;
+    width: 90%;
+    height: 45%;
+    justify-content: space-between;
+}
+
+.metade input{
+    width: 195px;
+}
+
+.metade .input {
+    height: 100%;
 
 }
