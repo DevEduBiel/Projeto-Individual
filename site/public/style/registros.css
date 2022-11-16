@@ -1,0 +1,179 @@
+@import url(./global.css);
+
+body {
+    background-size: 100vw;
+    background-repeat: no-repeat;
+    background-image: url(../assets/registro.png);
+}
+
+input {
+    text-decoration: none;
+    background-color: rgb(0, 136, 255, 0);
+    border-radius: 20px;
+    width: 410px;
+    height: 40px;
+    border: 2px solid rgba(115, 43, 203, 1);
+    font-size: 20px;
+    
+}
+
+button {
+    border-radius: 20px;
+    width: 150px;
+    height: 50px;
+}
+
+.mostra input {
+    width: 25px;
+    border-radius: 20px;
+}
+
+.campos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 45%;
+}
+
+.mostra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 175px;
+}
+
+.bloco {
+    display: flex;
+    align-items: center;
+    width: 1000px;
+    height: 580px;
+    border-radius: 20px;
+    background-color: rgba(233, 229, 229, 1);
+}
+
+.dados {
+    display: flex;
+    flex-direction: column;
+    width: 47%;
+    height: 87%;
+    justify-content: space-between;
+    padding-left: 6%;
+}
+
+.imagem {
+    width: 48%;
+    height: 100%;
+    border-radius: 0px 20px 20px 0px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 110%;
+    border-left: 2px solid rgba(115, 43, 203, 1);
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.limite{
+    width: 80%;
+}
+
+.botao{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    padding-left: 37%;
+}
+
+.titulo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 30%;
+
+}
+
+.txtTitulo {
+    font-size: 54px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgba(115, 43, 203, 1);
+    font-weight: bold;
+}
+
+.txtSubTitulo {
+    font-size: 22px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgba(1, 127, 204, 1);
+    font-weight: bold;
+}
+
+.txtTexto {
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+}
+
+.txtSubTexto {
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(0, 0, 0);
+    font-weight: 400;
+}
+
+.tela {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+#login .imagem{
+    background-image: url(../assets/login.png);
+}
+
+#login .campos{
+    height: 45%;
+}
+
+#cadastro .imagem {
+    background-image: url(../assets/cadastro.jpg);
+}
+
+#cadastro .campos {
+    height: 60%;
+}
+
+#informacoes .imagem {
+    background-image: url(../assets/informacoes.jpg);
+}
+
+#informacoes .campos {
+    height: 52%;
+}
+
+#informacoes .metade {
+    display: flex;
+    width: 90%;
+    height: 45%;
+    justify-content: space-between;
+}
+
+.metade input{
+    width: 195px;
+}
+
+.metade .input {
+    height: 100%;
+
+}

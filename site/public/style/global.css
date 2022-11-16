@@ -3,6 +3,8 @@
    License: none (public domain)
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 html,
 body,
 div,
@@ -109,6 +111,7 @@ section {
 
 body {
     line-height: 1;
+    overflow-x: hidden;
 }
 
 ol,
@@ -132,4 +135,34 @@ q:after {
 table {
     border-collapse: collapse;
     border-spacing: 0;
+}
+
+.branco {
+    color: rgba(233, 229, 229, 1);
+}
+
+.azul {
+    color: rgba(1, 127, 204, 1);
+}
+
+.roxo {
+    color: rgba(115, 43, 203, 1);
+}
+
+/* ===== Scrollbar CSS ===== */
+
+* {
+    scrollbar-width: auto;
+    scrollbar-color: unset;
+}
+
+*::-webkit-scrollbar {
+    width: 18px;
+    scroll-margin-left: 50;
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    border: 2px solid rgba(115, 43, 203, 1);
+
 }

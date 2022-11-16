@@ -3,16 +3,114 @@
 body {
     background-size: 100vw;
     background-repeat: no-repeat;
-    background-image: url(../assets/Main.jpg);
+    background-image: url(../assets/main.jpg);
+}
+
+.imgIcons {
+    font-size: 35px;
+}
+
+.imgIconG {
+    font-size: 200px;
+    color: aqua;
+}
+
+
+.txtTitulo {
+    font-size: 70px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgba(115, 43, 203, 1);
+    font-weight: bold;
+}
+
+.txtSubTitulo {
+    font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgba(1, 127, 204, 1);
+    font-weight: bold;
+}
+
+.txtTexto {
+    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    line-height: 120%;
+}
+
+.txtSubTexto {
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    margin-top: -5%;
+}
+
+.texto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.container {
+    width: 87.5%;
+    height: 100%;
+    display: flex;
+}
+
+.linhas {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 50px;
+    mix-blend-mode: color-burn;
+}
+
+.linhas .l {
+    width: 40%;
+    border-bottom: 3px solid rgba(1, 127, 204, 1);
+}
+
+.bloco {
+    display: flex;
+    background-color: rgba(233, 229, 229, 1);
+    border-radius: 20px;
+    -webkit-box-shadow: -2px 7px 18px -9px rgba(0, 0, 0, 0.69);
+    -moz-box-shadow: -2px 7px 18px -9px rgba(0, 0, 0, 0.69);
+    box-shadow: -2px 7px 18px -9px rgba(0, 0, 0, 0.69);
 
 }
 
-#navbar{
+.bolinha {
+    border-radius: 100%;
+    background-color: rgba(1, 127, 204, 1);
+    width: 20px;
+    height: 20px;
+}
+
+.post {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    background-color: rgba(233, 229, 229, 1);
+    z-index: 1;
+}
+
+.card {
+    display: flex;
+
+}
+
+/* ===== Barra de Navegacao ===== */
+#navbar {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    margin: 10% 0 0 5.8%;
+    margin: 9% 0 0 7%;
     position: fixed;
     height: 410px;
     width: 60px;
@@ -20,6 +118,7 @@ body {
     border-radius: 15px;
     z-index: 1;
     padding: 3px;
+    mix-blend-mode: color-burn;
 }
 
 
@@ -33,6 +132,7 @@ body {
     border-radius: 15px;
     background-color: rgba(0, 0, 0, 0.9);
 }
+
 #navbar .config {
     display: flex;
     flex-direction: column;
@@ -45,10 +145,12 @@ body {
 }
 
 #navbar .imgIcons {
-    font-size: 35px;
-    color: rgba(255, 255, 255, 1);
+    padding: 5.5px;
+    border-radius: 100%;
+
 }
 
+/* ===== Tela Home ===== */
 #home {
     display: flex;
     justify-content: center;
@@ -71,7 +173,7 @@ body {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    height: 120px;
+    height: 100px;
 
 }
 
@@ -85,14 +187,312 @@ body {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-#home .container{
-    width: 90%;
+#home .separar {
+    width: 1px;
     height: 100%;
-    display: flex;
+    background-color: white;
+}
+
+#home .container {
     flex-direction: column;
     justify-content: space-between;
 }
 
-#home .imgIcons {
-    font-size: 35px;
+#home .botaoLogin {
+    padding: 10px 25px 10px 25px;
+}
+
+#home .texto {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 12%;
+    width: 40%;
+    height: 60%;
+    margin-bottom: 10%;
+}
+
+/* ===== Tela Sobre ===== */
+#sobre {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100vw;
+    height: 100vh;
+}
+
+#sobre .container {
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+#sobre .card {
+    align-items: center;
+}
+
+#sobre .bloco {
+    justify-content: center;
+    align-items: center;
+    width: 825px;
+    height: 550px;
+}
+
+#sobre .texto {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-left: 5%;
+    height: 85%;
+    width: 80%;
+}
+
+#sobre .txtImg {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    height: 50%;
+}
+
+#sobre .titulo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+    height: 95%;
+}
+
+#sobre .img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+}
+
+#sobre .post {
+    width: 60px;
+    height: 150px;
+    margin-right: -35px;
+    -webkit-box-shadow: -10px 0px 17px -21px rgba(0, 0, 0, 0.58);
+    box-shadow: -15px 0px 17px -21px rgba(0, 0, 0, 0.58);
+
+}
+
+#sobre .bolinha {
+    margin-right: 15px;
+}
+
+/* ===== Tela Playlist ===== */
+#playlist {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100vw;
+    height: 100vh;
+}
+
+#playlist .container {
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    height: 100%;
+}
+
+
+#playlist .card {
+    flex-direction: column;
+    align-items: flex-end;
+
+}
+
+#playlist .bloco {
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 950px;
+    height: 550px;
+}
+
+#playlist .post {
+    width: 150px;
+    height: 60px;
+    margin-bottom: -35px;
+    margin-right: 100px;
+
+}
+
+#playlist .bolinha {
+    margin-bottom: 15px;
+}
+
+#playlist .texto {
+    display: flex;
+    justify-content: center;
+    height: 90%;
+    width: 100%;
+}
+
+#playlist .cabeca {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    height: 35%;
+}
+
+#playlist .play {
+    background-image: url(../assets/playlist-fundo.jpg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 65%;
+    border-top: 1px solid rgba(115, 43, 203, 1);
+    border-radius: 20px;
+
+}
+
+#playlist .suaPlaylist {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 60%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow: overlay;
+    flex-wrap: wrap;
+    padding-left: 5%;
+
+}
+
+#playlist .novaPlaylist {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32%;
+    height: 85%;
+    border-left: 2px solid rgba(115, 43, 203, 1);
+}
+
+#playlist .blocoPlay {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 210px;
+    height: 110px;
+    margin: 3% 10% 3% 0%;
+
+}
+
+#playlist .playlist {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border: 3px solid aqua;
+    border-radius: 20px;
+}
+
+#playlist .txtSubTexto {
+    margin: 0;
+}
+
+#playlist .blocoNovo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+
+}
+
+#playlist .playNovo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    border: 3px solid aqua;
+    border-radius: 20px;
+}
+
+/* ===== Tela Comunidade ===== */
+#comunidade {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100vw;
+    height: 100vh;
+}
+
+#comunidade .container {
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    height: 100%;
+}
+
+#comunidade .bloco {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 950px;
+    height: 550px;
+}
+
+#comunidade .post {
+    width: 150px;
+    height: 60px;
+    margin-top: -35px;
+    margin-right: 750px;
+    -webkit-box-shadow: 0px 4px 17px -3px rgba(0, 0, 0, 0.58);
+    box-shadow: 0px 4px 5px -3px rgba(0, 0, 0, 0.58);
+
+}
+
+#comunidade .bolinha {
+    margin-top: 15px;
+}
+
+#comunidade .texto {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 90%;
+    width: 50%;
+    
+}
+
+#comunidade .textoFigura {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 90%;
+    height: 80%;
+    margin-left: 5%;
+}
+
+#comunidade .titulo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 80%;
+    height: 36%;
+}
+
+#comunidade .botao {
+    display: flex;
+    height: 15%;
+    width: 90%;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+#comunidade button {
+    border-radius: 20px;
+    width: 150px;
+    height: 50px;
 }
