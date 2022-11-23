@@ -1,0 +1,23 @@
+{
+  "name": "site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon --ext *"
+  },
+  "author": "Eduardo Gabriel",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "live-server": "^1.2.2",
+    "livereload": "^0.9.3",
+    "connect-livereload": "^0.6.1",
+    "mssql": "^9.0.1",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.20",
+    "path": "^0.12.7"
+  }
+}

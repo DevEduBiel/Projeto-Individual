@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GYMusic</title>
     <link rel="stylesheet" href="./style/index.css">
+
 </head>
 
 <body>
@@ -40,7 +41,7 @@
             <header>
                 <img src="./assets/home-logo.png" alt="" class="imgLogo">
                 <div class="loginUsuario">
-                    <a href="">
+                    <a href="./cadastro.html">
                         <iconify-icon icon="fluent:person-add-16-filled" class="imgIcons botaoLogin azul">
                         </iconify-icon>
                     </a>
@@ -129,39 +130,13 @@
                         </div>
                     </div>
                     <div class="play">
-                        <div class="suaPlaylist">
-                            <div class="blocoPlay">
-                                <div class="playlist">
-                                    <iconify-icon icon="mdi:playlist-music" class="imgIcons roxo">
-                                </div>
-                                <span class="txtSubTexto">Playlist-01</span>
-                            </div>
-                            <div class="blocoPlay">
-                                <div class="playlist">
-                                    <iconify-icon icon="mdi:playlist-music" class="imgIcons roxo"></iconify-icon>
-                                </div>
-                                <span class="txtSubTexto">Playlist-01</span>
-                            </div>
-                            <div class="blocoPlay">
-                                <div class="playlist">
-                                    <iconify-icon icon="mdi:playlist-music" class="imgIcons roxo"></iconify-icon>
-                                </div>
-                                <span class="txtSubTexto">Playlist-01</span>
-                            </div>
-                            <div class="blocoPlay">
-                                <div class="playlist">
-                                    <iconify-icon icon="mdi:playlist-music" class="imgIcons roxo"></iconify-icon>
-                                </div>
-                                <span class="txtSubTexto">Playlist-01</span>
-                            </div>
-                            <div class="blocoPlay">
-                                <div class="playlist">
-                                    <iconify-icon icon="mdi:playlist-music" class="imgIcons roxo"></iconify-icon>
-                                </div>
-                                <span class="txtSubTexto">Playlist-01</span>
-                            </div>
-                            
-
+                        <div id="suaPlaylist" >
+                           <div class="facalogin">
+                            <span class="txtSubTitulo">Faca Login</span>
+                            <span class="txtSubTitulo">
+                               Para cria e ver suas playlists
+                            </span>
+                           </div>
                         </div>
                         <div class="novaPlaylist">
                             <div class="blocoNovo">
@@ -208,7 +183,7 @@
                     <img src="./assets/comunidade-boombox.png" alt="" height="65%">
                 </div>
                 <div class="botao">
-                    <button onclick="">Explorar</button>
+                    <button onclick="apaga()">Explorar</button>
                 </div>
             </div>
             <div class="post">
@@ -220,3 +195,10 @@
 </html>
 
 <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
+
+<script>
+    function apaga()
+    {
+        document.getElementById("suaPlaylist").innerHTML = ""
+    }
+</script>
