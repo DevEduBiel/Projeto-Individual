@@ -33,7 +33,7 @@ function autenticar() {
 
                 sessionStorage.EMAIL_USUARIO = vetorUsuario.email;
                 sessionStorage.NOME_USUARIO = vetorUsuario.nome;
-                sessionStorage.ID_USUARIO = vetorUsuario.idUsuario;
+                localStorage.ID_USUARIO = vetorUsuario.idUsuario;
 
                 playlistUsuario()
                 window.location = "index.html";
@@ -55,9 +55,9 @@ function autenticar() {
 
 }
 
-
+const id = sessionStorage.ID_USUARIO;
 function playlistUsuario() {
-    const id = sessionStorage.ID_USUARIO;
+    
     fetch("/playlist/mostrarPlaylist", {
         method: "POST",
         headers: {
