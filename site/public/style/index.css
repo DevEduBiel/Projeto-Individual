@@ -383,7 +383,7 @@ body {
 #playlist .blocoPlay {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: 210px;
     height: 110px;
     margin: 3% 10% 3% 0%;
@@ -398,6 +398,7 @@ body {
     height: 100px;
     border: 3px solid aqua;
     border-radius: 20px;
+    margin-right: 15px;
 }
 
 #playlist .txtSubTexto {

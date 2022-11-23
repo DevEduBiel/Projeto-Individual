@@ -11,4 +11,8 @@ router.post("/criarPlaylist", function (req, res) {
     playlistUsuario.criarPlaylist(req, res);
 })
 
+router.post("/mostraMusica", function (req, res) {
+    playlistUsuario.mostraMusica(req, res);
+})
+
 module.exports = router;
