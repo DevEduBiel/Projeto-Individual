@@ -35,7 +35,6 @@ function autenticar() {
                 sessionStorage.NOME_USUARIO = vetorUsuario.nome;
                 localStorage.ID_USUARIO = vetorUsuario.idUsuario;
 
-                playlistUsuario()
                 window.location = "index.html";
             }
             );
@@ -43,89 +42,6 @@ function autenticar() {
         } else {
 
             console.log("Houve um erro ao tentar realizar o login!");
-
-            resposta.text().then(texto => {
-                console.error(texto);
-            });
-        }
-
-    }).catch(function (erro) {
-        console.log(erro);
-    })
-
-}
-
-const id = sessionStorage.ID_USUARIO;
-function playlistUsuario() {
-    
-    fetch("/playlist/mostrarPlaylist", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            idServer: id,
-        })
-    }).then(function (resposta) {
-        if (resposta.ok) {
-            console.log(resposta);
-            resposta.json().then(vetorPlaylist => {
-                console.log(vetorPlaylist);
-
-        
-                // < div class="blocoPlay" >
-                //             <div class="playlist">
-                //                 <iconify-icon icon="mdi:playlist-music" class="imgIcons roxo"></iconify-icon>
-                //             </div>
-                //             <span class="txtSubTexto">Playlist-01</span>
-                //         </ >
-            }
-            );
-
-        } else {
-
-            console.log("Houve um erro ao pegar as playlists");
-
-            resposta.text().then(texto => {
-                console.error(texto);
-            });
-        }
-
-    }).catch(function (erro) {
-        console.log(erro);
-    })
-
-}
-
-function criarPlaylist() {
-    const id = sessionStorage.ID_USUARIO;
-    fetch("/playlist/criarPlaylist", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            idServer: id,
-        })
-    }).then(function (resposta) {
-        if (resposta.ok) {
-            console.log(resposta);
-            resposta.json().then(vetorPlaylist => {
-                console.log(vetorPlaylist);
-
-
-                // < div class="blocoPlay" >
-                //             <div class="playlist">
-                //                 <iconify-icon icon="mdi:playlist-music" class="imgIcons roxo"></iconify-icon>
-                //             </div>
-                //             <span class="txtSubTexto">Playlist-01</span>
-                //         </ >
-            }
-            );
-
-        } else {
-
-            console.log("Houve um erro ao pegar as playlists");
 
             resposta.text().then(texto => {
                 console.error(texto);
