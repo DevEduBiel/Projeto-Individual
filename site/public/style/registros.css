@@ -14,7 +14,7 @@ input {
     height: 40px;
     border: 2px solid rgba(115, 43, 203, 1);
     font-size: 20px;
-    
+
 }
 
 button {
@@ -82,11 +82,11 @@ button {
     justify-content: space-around;
 }
 
-.limite{
+.limite {
     width: 80%;
 }
 
-.botao{
+.botao {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -138,16 +138,18 @@ button {
     width: 100vw;
 }
 
-#login .imagem{
+#login .imagem {
     background-image: url(../assets/login.png);
+    background-size: cover;
 }
 
-#login .campos{
+#login .campos {
     height: 45%;
 }
 
 #cadastro .imagem {
     background-image: url(../assets/cadastro.jpg);
+    background-size: cover;
 }
 
 #cadastro .campos {
@@ -156,6 +158,7 @@ button {
 
 #informacoes .imagem {
     background-image: url(../assets/informacoes.jpg);
+    background-size: cover;
 }
 
 #informacoes .campos {
@@ -169,7 +172,7 @@ button {
     justify-content: space-between;
 }
 
-.metade input{
+.metade input {
     width: 195px;
 }
 

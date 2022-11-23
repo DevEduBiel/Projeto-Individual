@@ -1,0 +1,3 @@
+function playlistUsuario(){
+    alert('teste')
+}

@@ -353,7 +353,7 @@ body {
 
 }
 
-#playlist .suaPlaylist {
+#playlist #suaPlaylist {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -364,6 +364,11 @@ body {
     flex-wrap: wrap;
     padding-left: 5%;
 
+}
+
+#playlist .facalogin{
+    display: flex;
+    flex-direction: column;
 }
 
 #playlist .novaPlaylist {
