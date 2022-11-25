@@ -1,0 +1,74 @@
+@import url(./global.css);
+
+#playlist {
+    background-color: rgb(49, 49, 49);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+#playlist .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 85%;
+    height: 550px;
+}
+
+#playlist .tocaMusica {
+    width: 100%;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.69)
+}
+
+
+#playlist .pesquisaPlaylist {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    background-color: rgb(214, 214, 214);
+}
+
+#playlist .nomePlaylist {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
+    height: 200px;
+    background-color: rgb(214, 214, 214);
+}
+
+#playlist .musicasPlaylist {
+    width: 102%;
+    height: 200px;
+    overflow-y: scroll;
+    overflow: overlay;
+}
+
+#playlist .musicas {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 98%;
+    height: 40px;
+    border-radius: 20px;
+    background-color: rgba(16, 16, 16, 0.95);
+    margin-bottom: 4px;
+
+}
+
+#playlist #imgMusica {
+    width: 200px;
+    height: 200px;
+    background-color: blueviolet;
+}
+
+#playlist .nomeMusicaArtista {
+    display: flex;
+    flex-direction: column;
+}
