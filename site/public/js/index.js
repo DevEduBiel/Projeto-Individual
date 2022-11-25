@@ -15,16 +15,18 @@ if (id!=0) {
             console.log(resposta);
             resposta.json().then(vetorPlaylist => {
                 console.log(vetorPlaylist);
+                localStorage.PLAYLISTS = vetorPlaylist
                 document.getElementById("suaPlaylist").innerHTML = ""
 
                 for (var contador = 0; contador < vetorPlaylist.length; contador++) {
-                    document.getElementById("suaPlaylist").innerHTML += `
+                    document.getElementById("musicasPlaylist").innerHTML += `
                     <a onClick="ativafuncao(this.id)" class="blocoPlay" id=${vetorPlaylist[contador].idPlaylist} >
                             <div class="playlist">
                                 <iconify-icon icon="mdi:playlist-music" class="imgIcons roxo"></iconify-icon>
                            </div>
                            <span class="txtSubTexto">${vetorPlaylist[contador].nome}</span>
-                       </a>`   
+                       </a>
+                       `   
                 }
             }
             );

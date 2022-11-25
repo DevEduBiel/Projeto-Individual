@@ -12,6 +12,7 @@ var PORTA = process.env.AMBIENTE_PROCESSO == "desenvolvimento" ? 3333 : 8080;
 var indexRouter = require("./src/routes/index");
 var registroRouter = require("./src/routes/registro");
 var playlistRouter = require("./src/routes/playlist");
+var musicaRouter = require("./src/routes/musica");
 
 const liveReloadServer = livereload.createServer();
 liveReloadServer.server.once("connection", () => {
@@ -33,6 +34,7 @@ app.use(cors());
 app.use("/", indexRouter);
 app.use("/registro", registroRouter);
 app.use("/playlist", playlistRouter);
+app.use("/musica", playlistRouter);
 
 
 app.listen(PORTA, function () {
