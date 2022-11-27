@@ -18,7 +18,7 @@
 .txtTexto {
     font-size: 16px;
     font-family: 'Montserrat', sans-serif;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-weight: 500;
 }
 
@@ -81,6 +81,53 @@
 
 }
 
+#navbar input{
+    display: none;
+}
+
+/* ===== CheckBox ===== */
+
+#navbar .dislike  input + label:before {
+    content: '';
+    width: 35px;
+    height: 35px;
+    background: url('https://api.iconify.design/mdi/dislike-outline.svg?color=white&width=35&height=35') no-repeat center center / contain;
+    display: inline-block;
+}
+
+#navbar .dislike input:checked  + label:before {
+    background: url('https://api.iconify.design/mdi/dislike.svg?color=white&width=30&height=30') no-repeat center center / contain;
+    display: inline-block;
+}
+
+#navbar .like input+label:before {
+    content: '';
+    width: 35px;
+    height: 35px;
+    background: url('https://api.iconify.design/mdi/like-outline.svg?color=white&width=30&height=30') no-repeat center center / contain;
+    display: inline-block;
+}
+
+#navbar .like input:checked+label:before {
+background: url('https://api.iconify.design/mdi/like.svg?color=white&width=30&height=30') no-repeat center center / contain;
+}
+
+#navbar .fav input+label:before {
+    content: '';
+    width: 35px;
+    height: 35px;
+    background: url('https://api.iconify.design/mdi/heart-multiple-outline.svg?color=white&width=30&height=30') no-repeat center center / contain;
+    display: inline-block;
+}
+
+#navbar .fav input:checked+label:before {
+    background: url('https://api.iconify.design/mdi/heart-multiple.svg?color=white&width=30&height=30') no-repeat center center / contain;
+    display: inline-block;
+}
+
+
+
+
 /* ===== Tela Playlist ===== */
 
 #playlist {
@@ -104,6 +151,7 @@
 }
 
 #playlist input{
+    all: unset;
     background-color: rgba(16, 16, 16, 0.95);
     border-radius: 20px;
     width: 200px;
@@ -136,7 +184,6 @@
     background-color: rgb(214, 214, 214);
 }
 
-
 #playlist #musicasPlaylist {
     width: 102%;
     height: 200px;
@@ -162,8 +209,10 @@
     background-color: blueviolet;
 }
 
-#playlist .nomeMusicaArtista {
+#playlist .albumNomeArtista {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    height: 100px;
     margin-left: 20px;
 }

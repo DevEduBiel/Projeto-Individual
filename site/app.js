@@ -34,7 +34,7 @@ app.use(cors());
 app.use("/", indexRouter);
 app.use("/registro", registroRouter);
 app.use("/playlist", playlistRouter);
-app.use("/musica", playlistRouter);
+app.use("/musica", musicaRouter);
 
 
 app.listen(PORTA, function () {

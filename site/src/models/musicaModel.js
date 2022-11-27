@@ -1,16 +1,28 @@
 var database = require("../database/config")
 
-function mostrarMusica
-    (idUsuario, idPlaylist) {
+function mostrarMusica(idPlaylist) {
 
     var instrucao = `
-        select m.* from musica m join playlist_musica p
-        on m.idMusica = p.fkMusica where p.fkCriador = '${idUsuario}' and p.fkPlaylist = '${idPlaylist}';
+        select m.* from musica m join musica_salva s
+        on m.idMusica = s.fkMusica 
+        where s.fkPlaylist = '${idPlaylist}';
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function deletarMusica(idPlaylist) {
+
+    var instrucao = `
+        select m.* from musica m join musica_salva s
+        on m.idMusica = s.fkMusica 
+        where s.fkPlaylist = '${idPlaylist}';
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
 
 module.exports = {
-    mostrarMusica
+    mostrarMusica,
+    deletarMusica
 }

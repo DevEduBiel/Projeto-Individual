@@ -19,5 +19,6 @@ function autenticar(email, senha) {
 
 module.exports = {
    cadastrar,
-   autenticar
+   autenticar,
+   
 }

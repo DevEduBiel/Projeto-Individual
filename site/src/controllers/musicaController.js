@@ -1,17 +1,16 @@
-var playlistModel = require("../models/musicaModel");
+var MusicaModel = require("../models/musicaModel");
 
 function mostrarMusica(req, res){
     // Crie uma variável que vá recuperar os valores do id
-    var idUsuario = req.body.idServer;
     var idPlaylist = req.body.idPlaylistServer;
 
     // Faça as validações dos valores
-    if (idUsuario == undefined && idPlaylist == undefined) {
+    if (idPlaylist == undefined) {
         alert('Voce precisa fazer login!!')
     } else {
 
         // Passe os valores como parâmetro e vá para o arquivo playlistModel.js
-        playlistModel.mostraMusica(idUsuario, idPlaylist)
+        MusicaModel.mostrarMusica(idPlaylist)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -29,6 +28,33 @@ function mostrarMusica(req, res){
     }
 }
 
+function deletarMusica(req, res) {
+    // Crie uma variável que vá recuperar os valores do id , playlist e muscia
+    var idUsuario = req.body.idServer;
+    var idPlaylist = req.body.idPlaylistServer;
+    var idMusica = req.body.idMusicaServer;
+
+
+        // Passe os valores como parâmetro e vá para o arquivo musica.Model.js
+         MusicaModel.deletarMusica(idUsuario,idPlaylist, idMusica)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\n Erro ao deletar musica ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+
+
 module.exports={
-    mostrarMusica
+    mostrarMusica,
+    deletarMusica
 }

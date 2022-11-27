@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style/playlist.css">
     <script src="./js/playlist.js"></script>
     <script src="./js/musica.js"></script>
 </head>
+
 <body>
     <div id="navbar">
         <div class="menu">
-            <a href="./login.html">
-                <iconify-icon icon="mdi:heart-multiple-outline" class="imgIcons branco"></iconify-icon>
-            </a>
-            <a href="">
-                <iconify-icon icon="mdi:like-outline" class="imgIcons branco"></iconify-icon>
-            </a>
-            <a href="">
-                <iconify-icon icon="mdi:dislike-outline" class="imgIcons branco"></iconify-icon>
-            </a>
-            <a href="">
+            <div class="fav">
+                <input type="checkbox" id="fav" onclick="olha()">
+                <label for="fav"></label>
+            </div>
+            <div class="like">
+                <input type="checkbox" id="like">
+                <label for="like"></label>
+            </div>
+            <div class="dislike">
+                <input type="checkbox" id="dislike">
+                <label for="dislike"></label>
+            </div>
+            <a onclick="deletarPlaylist()">
                 <iconify-icon icon="lucide:delete" class="imgIcons branco"></iconify-icon>
             </a>
         </div>
@@ -37,24 +42,18 @@
     <div id="playlist">
         <div class="container">
             <div class="pesquisaPlaylist">
-                <span id="nomePlaylist" class="txtTitulo">Minha Playlist</span>
+                <span id="nomePlaylist" class="txtTitulo"></span>
                 <input id="pesquisar" placeholder="Pequisar...">
             </div>
             <div class="nomePlaylist">
                 <div id="imgMusica"></div>
-                <div class="nomeMusicaArtista">
-                    <span id="nomeMusica" class="txtTitulo">U Got That</span>
-                    <span id="nomeArtista" class="txtSubTitulo">Halogen</span>
+                <div class="albumNomeArtista">
+                    <span id="musica" class="txtTitulo"></span>
+                    <span id="artista" class="txtSubTitulo"></span>
+                    <span id="album" class="txtSubTitulo" style="padding-top:20px ;"></span>
                 </div>
             </div>
             <div id="musicasPlaylist">
-                <div class="musicas">
-                    <span id="nomeMusica"class="txtTexto" >U Got That</span>
-                    <span id="nomeArtista"class="txtTexto">Halogen</span>
-                    <span id="generoMusica"class="txtTexto">Eletronica</span>
-                    <span id="duracaoMusica"class="txtTexto">4.17</span>
-                    <iconify-icon icon="material-symbols:delete-forever" class="imgIconPeq branco" onclick="pag()" ></iconify-icon>
-                </div>
             </div>
         </div>
         <div class="tocaMusica"></div>
@@ -62,6 +61,7 @@
 
     </div>
 </body>
+
 </html>
 
 <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
