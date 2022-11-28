@@ -27,10 +27,34 @@ function deletarPlaylist(idUsuario, idPlaylist) {
     return database.executar(instrucao);
 }
 
+function marcarFav(usuario, playlist, marcar) {
+
+    var instrucao = `
+    call marcarFav(${usuario},${playlist},${marcar});
+        `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function buscarAvalicao(idPlaylist, idUsuario) {
+
+    var instrucao = `
+    select favoritaUsu,dislikeUsu,likeUsu,
+    (select count(favoritaUsu) from avaliacao where favoritaUsu= 1)qtdFav, 
+    (select count(dislikeUsu) from avaliacao where favoritaUsu= 1)qtdLike, 
+    (select count(likeUsu) from avaliacao where favoritaUsu= 1)qtdDislike 
+    from avaliacao where fkUsuario = ${idPlaylist} and fkPlaylist = ${idUsuario};
+        `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 
 module.exports = {
     buscaPlaylist,
+    buscarAvalicao,
     criarPlaylist,
-    deletarPlaylist
+    deletarPlaylist,
+    marcarFav
 
 }
