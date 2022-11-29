@@ -6,7 +6,7 @@ var connectLiveReload = require("connect-livereload");
 var express = require("express");
 var cors = require("cors");
 var path = require("path");
-var PORTA = process.env.AMBIENTE_PROCESSO == "desenvolvimento" ? 3333 : 8080;
+var PORTA = process.env.AMBIENTE_PROCESSO == "desenvolvimento" ? 3300 : 8080;
 
 
 var indexRouter = require("./src/routes/index");

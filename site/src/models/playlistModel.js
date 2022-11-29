@@ -58,10 +58,10 @@ function buscarAvalicao(idPlaylist, idUsuario) {
 
     var instrucao = `
     select favoritaUsu,dislikeUsu,likeUsu,
-    (select count(favoritaUsu) from avaliacao where favoritaUsu= 1)qtdFav, 
-    (select count(dislikeUsu) from avaliacao where dislikeUsu= 1)qtdDislike, 
-    (select count(likeUsu) from avaliacao where likeUsu= 1)qtdLike 
-    from avaliacao where fkUsuario = ${idPlaylist} and fkPlaylist = ${idUsuario};
+    (select count(favoritaUsu) from avaliacao where favoritaUsu= 1 and fkPlaylist = ${idPlaylist})qtdFav, 
+    (select count(dislikeUsu) from avaliacao where dislikeUsu= 1 and fkPlaylist = ${idPlaylist})qtdDislike, 
+    (select count(likeUsu) from avaliacao where likeUsu= 1 and fkPlaylist = ${idPlaylist})qtdLike 
+    from avaliacao where fkUsuario = ${idUsuario} and fkPlaylist = ${idPlaylist};
         `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);

@@ -1,5 +1,10 @@
 @import url(./global.css);
 
+button{
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+}
 
 .imgIconG {
     font-size: 260px;
@@ -189,6 +194,43 @@ background: url('https://api.iconify.design/mdi/like.svg?color=%23732bcb&width=3
     height: 250px;
     background-color: rgb(29, 29, 29);
 }
+
+#playlist .infoPlaylist{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 25%;
+    height: 100%;
+} 
+
+#playlist .addmusica{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 30%;
+} 
+
+#playlist .avalia{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 20%;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(255, 255, 255);
+    
+} 
+
+#playlist #iconeAvalia{
+    display: flex;
+    width: 100%;
+    height: 25%;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgb(14, 14, 14);
+} 
 
 #playlist #musicasPlaylist {
     width: 102%;

@@ -80,6 +80,7 @@ function buscarAvalicao() {
             if (resposta.ok) {
                 console.log(resposta);
                 resposta.json().then(vetorAvaliacao => {
+                    console.log(vetorAvaliacao)
                     if (vetorAvaliacao[0].favoritaUsu == 1) {
                         var checkbox = document.getElementById('fav');
                         checkbox.checked = true
@@ -94,6 +95,19 @@ function buscarAvalicao() {
                         checkbox.checked = true
                         vetorAvaliacao[0].likeUsu = 0
                     }
+                    document.getElementById('iconeAvalia').innerHTML = `<div class="avalia">
+                <iconify-icon icon="mdi:heart-multiple" class="imgIcons" style="color: rgb(111, 0, 255);"></iconify-icon>
+                <span>${vetorAvaliacao[0].qtdFav}</span>
+            </div>
+            <div class="avalia">
+                <iconify-icon icon="mdi:like" class="imgIcons" style="color: green;"></iconify-icon>
+                <span>${vetorAvaliacao[0].qtdLike}</span>
+            </div>
+            <div class="avalia">
+                <iconify-icon icon="mdi:dislike" class="imgIcons" style="color: red;"></iconify-icon>
+                <span>${vetorAvaliacao[0].qtdDislike}</span>
+            </div>
+                `
                 }
                 );
 
