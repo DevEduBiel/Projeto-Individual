@@ -36,13 +36,31 @@ function marcarFav(usuario, playlist, marcar) {
     return database.executar(instrucao);
 }
 
+function marcarLike(usuario, playlist, marcar) {
+
+    var instrucao = `
+    call marcarLike(${usuario},${playlist},${marcar});
+        `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function marcarDislike(usuario, playlist, marcar) {
+
+    var instrucao = `
+    call marcarDislike(${usuario},${playlist},${marcar});
+        `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 function buscarAvalicao(idPlaylist, idUsuario) {
 
     var instrucao = `
     select favoritaUsu,dislikeUsu,likeUsu,
     (select count(favoritaUsu) from avaliacao where favoritaUsu= 1)qtdFav, 
-    (select count(dislikeUsu) from avaliacao where favoritaUsu= 1)qtdLike, 
-    (select count(likeUsu) from avaliacao where favoritaUsu= 1)qtdDislike 
+    (select count(dislikeUsu) from avaliacao where dislikeUsu= 1)qtdDislike, 
+    (select count(likeUsu) from avaliacao where likeUsu= 1)qtdLike 
     from avaliacao where fkUsuario = ${idPlaylist} and fkPlaylist = ${idUsuario};
         `;
     console.log("Executando a instrução SQL: \n" + instrucao);
@@ -55,6 +73,8 @@ module.exports = {
     buscarAvalicao,
     criarPlaylist,
     deletarPlaylist,
-    marcarFav
+    marcarFav,
+    marcarLike,
+    marcarDislike
 
 }

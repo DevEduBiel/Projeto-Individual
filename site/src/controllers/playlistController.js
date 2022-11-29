@@ -148,6 +148,68 @@ function marcarFav(req, res) {
     }
 }
 
+function marcarLike(req, res) {
+    // Crie uma variável que vá recuperar os valores do id
+    var marcar = req.body.marcarLikeSever;
+    var playlist = req.body.idPlaylistServer;
+    var usuario = req.body.idServer;
+
+
+    // Faça as validações dos valores
+    if (marcar == undefined && playlist == undefined && usuario == undefined) {
+        alert('Voce precisa fazer login!!')
+    } else {
+
+        // Passe os valores como parâmetro e vá para o arquivo playlistModel.js
+        playlistModel.marcarLike(usuario, playlist, marcar)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\n Erro ao favoritar playlist ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+function marcarDislike(req, res) {
+    // Crie uma variável que vá recuperar os valores do id
+    var marcar = req.body.marcarDislikeSever;
+    var playlist = req.body.idPlaylistServer;
+    var usuario = req.body.idServer;
+
+
+    // Faça as validações dos valores
+    if (marcar == undefined && playlist == undefined && usuario == undefined) {
+        alert('Voce precisa fazer login!!')
+    } else {
+
+        // Passe os valores como parâmetro e vá para o arquivo playlistModel.js
+        playlistModel.marcarDislike(usuario, playlist, marcar)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\n Erro ao favoritar playlist ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
 
 
 module.exports = {
@@ -155,5 +217,7 @@ module.exports = {
     buscarAvalicao,
     criarPlaylist,
     deletarPlaylist,
-    marcarFav
+    marcarFav,
+    marcarLike,
+    marcarDislike
 }

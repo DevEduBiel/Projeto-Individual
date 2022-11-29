@@ -5,27 +5,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="initial-scale=1.0">
-    <title>Document</title>
+    <title>Playlist</title>
     <link rel="stylesheet" href="./style/playlist.css">
     <script src="./js/playlist.js"></script>
     <script src="./js/musica.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 </head>
 
 <body>
     <div id="navbar">
         <div class="menu">
-            <div class="fav">
+            <a class="fav">
                 <input type="checkbox" id="fav" onclick="marcarFav()">
                 <label for="fav"></label>
-            </div>
-            <div class="like">
-                <input type="checkbox" id="like">
+            </a>
+            <a class="like">
+                <input type="checkbox" id="like" onclick="marcarLike()">
                 <label for="like"></label>
-            </div>
-            <div class="dislike">
-                <input type="checkbox" id="dislike">
+            </a>
+            <a class="dislike">
+                <input type="checkbox" id="dislike" onclick="marcarDislike()">
                 <label for="dislike"></label>
-            </div>
+            </a>
             <a onclick="deletarPlaylist()">
                 <iconify-icon icon="lucide:delete" class="imgIcons branco"></iconify-icon>
             </a>
@@ -43,12 +46,13 @@
         <div class="container">
             <div class="pesquisaPlaylist">
                 <span id="nomePlaylist" class="txtTitulo"></span>
-                <input id="pesquisar" placeholder="Pequisar...">
             </div>
             <div class="nomePlaylist">
-                <div id="imgMusica"></div>
+                <div id="imgMusica">
+                    <iconify-icon icon="healthicons:gym-outline" class="imgIconG"></iconify-icon>
+                </div>
                 <div class="albumNomeArtista">
-                    <span id="musica" class="txtTitulo"></span>
+                    <span id="musica" class="txtTitulo">Todas suas músicas estão aqui</span>
                     <span id="artista" class="txtSubTitulo"></span>
                     <span id="album" class="txtSubTitulo" style="padding-top:20px ;"></span>
                 </div>

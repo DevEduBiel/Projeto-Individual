@@ -3,7 +3,7 @@ idPlaylist = localStorage.getItem('ID_PLAYLIST');
 window.onload = playlistUsuario() + buscarAvalicao()
 
 function playlistUsuario() {
-    if (id != 0) {
+    if (id != 0) {     
         fetch("/playlist/mostrarPlaylist", {
             method: "POST",
             headers: {
@@ -84,6 +84,16 @@ function buscarAvalicao() {
                         var checkbox = document.getElementById('fav');
                         checkbox.checked = true
                     }
+                    if (vetorAvaliacao[0].likeUsu == 1) {
+                        var checkbox = document.getElementById('like');
+                        checkbox.checked = true
+                        vetorAvaliacao[0].dislikeUsu = 0
+                    }
+                    if (vetorAvaliacao[0].dislikeUsu == 1) {
+                        var checkbox = document.getElementById('dislike');
+                        checkbox.checked = true
+                        vetorAvaliacao[0].likeUsu = 0
+                    }
                 }
                 );
 
@@ -137,6 +147,9 @@ function criarPlaylist() {
         })
 
     }
+    else {
+        Swal.fire('Faça login primeiro')
+    }
 }
 
 function ativafuncao(clicked_id) {
@@ -178,9 +191,9 @@ function deletarPlaylist() {
 }
 
 function marcarFav() {
-    var checkbox = document.getElementById('fav');
+    var checkboxFav = document.getElementById('fav');
     var marcado = true;
-    if (checkbox.checked) {
+    if (checkboxFav.checked) {
     } else {
         marcado = false;
     }
@@ -197,7 +210,91 @@ function marcarFav() {
             })
         }).then(function (resposta) {
             if (resposta.ok) {
+                buscarAvalicao()
 
+            } else {
+
+                console.log("Houve um erro ao marcar favorito");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+    }
+
+    
+}
+
+function marcarLike() {
+    var checkboxLike = document.getElementById('like');
+    var marcado = true;
+    if (checkboxLike.checked) {
+        var dislike = document.getElementById('dislike');
+        dislike.checked = false
+        marcarDislike(); 
+    } else {
+        marcado = false;
+    }
+    if (id != 0) {
+        fetch("/playlist/marcarLike", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idServer: id,
+                idPlaylistServer: idPlaylist,
+                marcarLikeSever: marcado
+            })
+        }).then(function (resposta) {
+            if (resposta.ok) {
+                buscarAvalicao()
+
+            } else {
+
+                console.log("Houve um erro ao marcar favorito");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+    }
+
+}
+function marcarDislike() {
+    var checkboxDislike = document.getElementById('dislike');
+    var marcado = true;
+    if (checkboxDislike.checked) {
+        var like = document.getElementById('like');
+        like.checked = false
+        marcarLike(); 
+    } else {
+        marcado = false;
+    }
+    if (id != 0) {
+        fetch("/playlist/marcarDislike", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idServer: id,
+                idPlaylistServer: idPlaylist,
+                marcarDislikeSever: marcado
+            })
+        }).then(function (resposta) {
+            if (resposta.ok) {
+                buscarAvalicao()
 
             } else {
 
@@ -216,8 +313,27 @@ function marcarFav() {
 
 }
 
-
 function deslogar() {
-    localStorage.ID_USUARIO = 0
-    window.location = "index.html";
+    if (id!=0){
+        Swal.fire({
+            title: 'Você realmente deseja sair?',
+            icon: 'warning',
+            showDenyButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sim',
+            denyButtonText: `Cancelar`,
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    'Sucesso',
+                    'Você saiu',
+                    'success'
+                )
+                localStorage.ID_USUARIO = 0
+                window.location = "index.html";
+            }
+        })
+    }
 }
+

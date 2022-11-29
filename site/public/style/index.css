@@ -1,5 +1,9 @@
 @import url(./global.css);
 
+html{
+    scroll-behavior: smooth;
+}
+
 body {
     background-size: 100vw;
     background-repeat: no-repeat;
@@ -12,8 +16,9 @@ body {
 }
 
 .imgIconG {
-    font-size: 200px;
-    color: aqua;
+    font-size: 250px;
+    color: rgba(115, 43, 203, 1);
+    margin-bottom: 50px;
 }
 
 
@@ -119,7 +124,6 @@ body {
     border-radius: 15px;
     z-index: 1;
     padding: 3px;
-    mix-blend-mode: color-burn;
 }
 
 
@@ -150,6 +154,7 @@ body {
     border-radius: 100%;
 
 }
+
 
 /* ===== Tela Home ===== */
 #home {
@@ -484,7 +489,7 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     height: 90%;
-    width: 50%;
+    width: 60%;
     
 }
 
@@ -493,7 +498,7 @@ body {
     align-items: flex-end;
     justify-content: space-between;
     width: 90%;
-    height: 80%;
+    height: 90%;
     margin-left: 5%;
 }
 
@@ -501,7 +506,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 80%;
+    width: 100%;
     height: 36%;
 }
 

@@ -1,6 +1,12 @@
 @import url(./global.css);
 
 
+.imgIconG {
+    font-size: 260px;
+    color: rgba(115, 43, 203, 1);
+    
+}
+
 .txtTitulo {
     font-size: 40px;
     font-family: 'Montserrat', sans-serif;
@@ -96,7 +102,7 @@
 }
 
 #navbar .dislike input:checked  + label:before {
-    background: url('https://api.iconify.design/mdi/dislike.svg?color=white&width=30&height=30') no-repeat center center / contain;
+    background: url('https://api.iconify.design/mdi/dislike.svg?color=%23732bcb&width=30&height=30') no-repeat center center / contain;
     display: inline-block;
 }
 
@@ -109,7 +115,7 @@
 }
 
 #navbar .like input:checked+label:before {
-background: url('https://api.iconify.design/mdi/like.svg?color=white&width=30&height=30') no-repeat center center / contain;
+background: url('https://api.iconify.design/mdi/like.svg?color=%23732bcb&width=30&height=30') no-repeat center center / contain;
 }
 
 #navbar .fav input+label:before {
@@ -121,7 +127,7 @@ background: url('https://api.iconify.design/mdi/like.svg?color=white&width=30&he
 }
 
 #navbar .fav input:checked+label:before {
-    background: url('https://api.iconify.design/mdi/heart-multiple.svg?color=white&width=30&height=30') no-repeat center center / contain;
+    background: url('https://api.iconify.design/mdi/heart-multiple.svg?color=%23732bcb&width=30&height=30') no-repeat center center / contain;
     display: inline-block;
 }
 
@@ -180,8 +186,8 @@ background: url('https://api.iconify.design/mdi/like.svg?color=white&width=30&he
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    height: 200px;
-    background-color: rgb(214, 214, 214);
+    height: 250px;
+    background-color: rgb(29, 29, 29);
 }
 
 #playlist #musicasPlaylist {
@@ -204,9 +210,13 @@ background: url('https://api.iconify.design/mdi/like.svg?color=white&width=30&he
 }
 
 #playlist #imgMusica {
-    width: 200px;
-    height: 200px;
-    background-color: blueviolet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 230px;
+    height: 250px;
+    background-color: black;
+    
 }
 
 #playlist .albumNomeArtista {
