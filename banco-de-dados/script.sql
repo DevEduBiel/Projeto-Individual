@@ -85,40 +85,40 @@ insert into musica_salva value
 DELIMITER $$
 CREATE PROCEDURE CriarPlaylist(in idUsuario int)
 BEGIN
-	 insert into playlist (nome, likes, deslikes, favorita, fkCriador)value ('playlist-teste', 0, 0, 0,idUsuario);
+	 insert into playlist (nome, fkCriador)value ('playlist-teste',idUsuario);
 	 insert into playlist_salva value (idUsuario,(select max(idPlaylist) from playlist));
 END$$
 DELIMITER ;
 
 DELIMITER $$
-CREATE PROCEDURE marcarFav(in usuario int, playlist int, marcar tinyint)
+CREATE PROCEDURE MarcarFav(in usuario int, playlist int, marcar tinyint)
 BEGIN
 	if (select count(*) from avaliacao where fkUsuario = usuario and fkPlaylist = playlist) = 0 then
     insert into avaliacao (fkUsuario,fkPlaylist, favoritaUsu)value(usuario,playlist, marcar);
     else
-    update avaliacao set favoritaUsu = marcar where fkUsuario = playlist and fkPlaylist = playlist;
+    update avaliacao set favoritaUsu = marcar where fkUsuario = usuario and fkPlaylist = playlist;
     END IF;
 END$$
 DELIMITER ;
 
 DELIMITER $$
-CREATE PROCEDURE marcarLike(in usuario int, playlist int, marcar tinyint)
+CREATE PROCEDURE MarcarLike(in usuario int, playlist int, marcar tinyint)
 BEGIN
 	if (select count(*) from avaliacao where fkUsuario = usuario and fkPlaylist = playlist) = 0 then
     insert into avaliacao (fkUsuario,fkPlaylist, likeUsu)value(usuario,playlist, marcar);
     else
-    update avaliacao set likeUsu = marcar where fkUsuario = playlist and fkPlaylist = playlist;
+    update avaliacao set likeUsu = marcar where fkUsuario = usuario and fkPlaylist = playlist;
     END IF;
 END$$
 DELIMITER ;
 
 DELIMITER $$
-CREATE PROCEDURE marcarDislike(in usuario int, playlist int, marcar tinyint)
+CREATE PROCEDURE MarcarDislike(in usuario int, playlist int, marcar tinyint)
 BEGIN
 	if (select count(*) from avaliacao where fkUsuario = usuario and fkPlaylist = playlist) = 0 then
     insert into avaliacao (fkUsuario,fkPlaylist, dislikeUsu)value(usuario,playlist, marcar);
     else
-    update avaliacao set dislikeUsu = marcar where fkUsuario = playlist and fkPlaylist = playlist;
+    update avaliacao set dislikeUsu = marcar where fkUsuario = usuario and fkPlaylist = playlist;
     END IF;
 END$$
 DELIMITER ;
@@ -129,11 +129,14 @@ call marcarLike(1,1,true);
 
 call marcarDislike(1,1,false);
 
-select favoritaUsu,dislikeUsu,likeUsu,
-(select count(favoritaUsu) from avaliacao where favoritaUsu= 1)qtdFav, 
-(select count(dislikeUsu) from avaliacao where dislikeUsu= 1)qtdDislike, 
-(select count(likeUsu) from avaliacao where likeUsu= 1)qtdLike 
-from avaliacao where fkUsuario =1 and fkPlaylist =1;
-
+select 
+(select favoritaUsu from avaliacao where fkUsuario =1 and fkPlaylist =5)favoritaUsu,
+(select dislikeUsu from avaliacao where fkUsuario =1 and fkPlaylist =5)dislikeUsu,
+(select likeUsu from avaliacao where fkUsuario =1 and fkPlaylist =5)likeUsu,
+(select count(favoritaUsu) from avaliacao where favoritaUsu= 1 and fkPlaylist = 5 )qtdFav, 
+(select count(dislikeUsu) from avaliacao where dislikeUsu= 1 and fkPlaylist = 5)qtdDislike, 
+(select count(likeUsu) from avaliacao where likeUsu= 1 and fkPlaylist = 5) qtdLike
+from avaliacao where fkPlaylist = 3;
+ 
 
 

@@ -57,11 +57,14 @@ function marcarDislike(usuario, playlist, marcar) {
 function buscarAvalicao(idPlaylist, idUsuario) {
 
     var instrucao = `
-    select favoritaUsu,dislikeUsu,likeUsu,
-    (select count(favoritaUsu) from avaliacao where favoritaUsu= 1 and fkPlaylist = ${idPlaylist})qtdFav, 
+    select 
+    (select favoritaUsu from avaliacao where fkUsuario =${idUsuario} and fkPlaylist =${idPlaylist})favoritaUsu,
+    (select dislikeUsu from avaliacao where fkUsuario =${idUsuario} and fkPlaylist =${idPlaylist})dislikeUsu,
+    (select likeUsu from avaliacao where fkUsuario =${idUsuario} and fkPlaylist =${idPlaylist})likeUsu,
+    (select count(favoritaUsu) from avaliacao where favoritaUsu= 1 and fkPlaylist = ${idPlaylist} )qtdFav, 
     (select count(dislikeUsu) from avaliacao where dislikeUsu= 1 and fkPlaylist = ${idPlaylist})qtdDislike, 
-    (select count(likeUsu) from avaliacao where likeUsu= 1 and fkPlaylist = ${idPlaylist})qtdLike 
-    from avaliacao where fkUsuario = ${idUsuario} and fkPlaylist = ${idPlaylist};
+    (select count(likeUsu) from avaliacao where likeUsu= 1 and fkPlaylist = ${idPlaylist}) qtdLike
+    from avaliacao where fkPlaylist = ${idPlaylist};
         `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);

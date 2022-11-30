@@ -32,6 +32,7 @@ function buscarAvalicao(req, res) {
     // Crie uma variável que vá recuperar os valores do id
     var idPlaylist = req.body.idPlaylistServer;
     var idUsuario = req.body.idServer;
+    
 
 
     // Faça as validações dos valores
@@ -40,7 +41,7 @@ function buscarAvalicao(req, res) {
     } else {
 
         // Passe os valores como parâmetro e vá para o arquivo playlistModel.js
-        playlistModel.buscarAvalicao(idUsuario, idPlaylist)
+        playlistModel.buscarAvalicao(idPlaylist, idUsuario)
             .then(
                 function (resultado) {
                     res.json(resultado);

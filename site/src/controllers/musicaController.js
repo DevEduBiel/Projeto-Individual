@@ -19,7 +19,7 @@ function mostrarMusica(req, res){
                 function (erro) {
                     console.log(erro);
                     console.log(
-                        "\n Erro ao criar as playlists ",
+                        "\n Erro ao mostrar musica ",
                         erro.sqlMessage
                     );
                     res.status(500).json(erro.sqlMessage);

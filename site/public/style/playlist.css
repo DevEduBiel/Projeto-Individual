@@ -207,8 +207,8 @@ background: url('https://api.iconify.design/mdi/like.svg?color=%23732bcb&width=3
 #playlist .addmusica{
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 80%;
+    justify-content: start;
+    width: 225px;
     height: 30%;
 } 
 

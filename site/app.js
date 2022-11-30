@@ -6,13 +6,14 @@ var connectLiveReload = require("connect-livereload");
 var express = require("express");
 var cors = require("cors");
 var path = require("path");
-var PORTA = process.env.AMBIENTE_PROCESSO == "desenvolvimento" ? 3300 : 8080;
+var PORTA = process.env.AMBIENTE_PROCESSO == "desenvolvimento" ? 3333 : 8080;
 
 
 var indexRouter = require("./src/routes/index");
 var registroRouter = require("./src/routes/registro");
 var playlistRouter = require("./src/routes/playlist");
 var musicaRouter = require("./src/routes/musica");
+var comunidadeRouter = require("./src/routes/comunidade");
 
 const liveReloadServer = livereload.createServer();
 liveReloadServer.server.once("connection", () => {
@@ -35,6 +36,7 @@ app.use("/", indexRouter);
 app.use("/registro", registroRouter);
 app.use("/playlist", playlistRouter);
 app.use("/musica", musicaRouter);
+app.use("/comunidade", comunidadeRouter);
 
 
 app.listen(PORTA, function () {
