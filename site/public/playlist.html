@@ -1,13 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
-    <script src="./js/playlist.js"></script>
+    <meta name="viewport" content="initial-scale=1.0">
+    <title>Playlist</title>
+    <link rel="stylesheet" href="./style/playlist.css">
+    <script src="./js/playlistFuncao.js"></script>
+    <script src="./js/musica.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 </head>
+
 <body>
-    oi
+    <div id="navbar">
+        <div class="menu">
+            <a class="fav">
+                <input type="checkbox" id="fav" onclick="marcarFav()">
+                <label for="fav"></label>
+            </a>
+            <a class="like">
+                <input type="checkbox" id="like" onclick="marcarLike()">
+                <label for="like"></label>
+            </a>
+            <a class="dislike">
+                <input type="checkbox" id="dislike" onclick="marcarDislike()">
+                <label for="dislike"></label>
+            </a>
+            <a onclick="deletarPlaylist()">
+                <iconify-icon icon="lucide:delete" class="imgIcons branco"></iconify-icon>
+            </a>
+        </div>
+        <div class="config">
+            <a href="">
+                <iconify-icon icon="bi:gear" class="imgIcons azul"></iconify-icon>
+            </a>
+            <a onclick="deslogar()">
+                <iconify-icon icon="eva:external-link-outline" class="imgIcons roxo"></iconify-icon>
+            </a>
+        </div>
+    </div>
+    <div id="playlist">
+        <div class="container">
+            <div class="pesquisaPlaylist">
+                <span id="nomePlaylist" class="txtTitulo"></span>
+            </div>
+            <div class="nomePlaylist">
+                <div id="imgMusica">
+                    <iconify-icon icon="healthicons:gym-outline" class="imgIconG"></iconify-icon>
+                </div>
+                <div class="albumNomeArtista">
+                    <span id="musica" class="txtTitulo">Todas suas músicas estão aqui</span>
+                    <span id="artista" class="txtSubTitulo"></span>
+                    <span id="album" class="txtSubTitulo" style="padding-top:20px ;"></span>
+                </div>
+            <div class="infoPlaylist">
+                <div id="iconeAvalia">
+                    <div class="avalia">
+                        <iconify-icon icon="mdi:heart-multiple" class="imgIcons" style="color: rgb(111, 0, 255);"></iconify-icon>
+                        <span>0</span>
+                    </div>
+                    <div class="avalia">
+                        <iconify-icon icon="mdi:like" class="imgIcons" style="color: green;"></iconify-icon>
+                        <span>0</span>
+                    </div>
+                    <div class="avalia">
+                        <iconify-icon icon="mdi:dislike" class="imgIcons" style="color: red;"></iconify-icon>
+                        <span>0</span>
+                    </div>
+                </div>
+                <div class="addmusica">
+                    <button>Adicionar musica</button>
+                </div>
+            </div>
+            </div>
+            <div id="musicasPlaylist">
+            </div>
+        </div>
+        <div class="tocaMusica"></div>
+
+
+    </div>
 </body>
+
 </html>
+
+<script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>

@@ -1,0 +1,126 @@
+@import url(./global.css);
+
+body {
+    background-size: 100vw;
+    background-repeat: no-repeat;
+    background-image: url(../assets/main.jpg);
+}
+
+.imgIcons {
+    font-size: 55px;
+}
+
+.txtTitulo {
+    font-size: 70px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgba(115, 43, 203, 1);
+    font-weight: bold;
+}
+
+.txtSubTitulo {
+    font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgba(115, 43, 203, 1);
+    font-weight: bold;
+}
+
+.txtTexto {
+    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(255, 174, 0);
+    font-weight: bold;
+}
+
+.txtSubTexto {
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+.txtPrincipal {
+    display: flex;
+    align-items: flex-end;
+    width: 85%;
+    height: 90px;
+}
+
+/* ===== Tela comunidade ===== */
+#comunidade {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+}
+
+#comunidade .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 90%;
+    height: 2200px;
+}
+
+#comunidade .top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 450px;
+    -webkit-box-shadow: -2px 7px 18px -9px rgba(0, 0, 0, 0.69);
+    -moz-box-shadow: -2px 7px 18px -9px rgba(0, 0, 0, 0.69);
+    box-shadow: -2px 7px 18px -9px rgba(0, 0, 0, 0.69);
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+
+}
+
+#comunidade .titulo {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    height: 25%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+
+}
+
+#comunidade .topPlay {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    height: 75%;
+    background-image: url(../assets/playlist-fundo.jpg);
+    background-size: 100%;
+    border-radius: 0px 0px 20px 20px;
+    overflow-x: scroll;
+
+}
+
+#comunidade .blocoPlay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 210px;
+    height: 280px;
+    margin: 0% 3% 3% 3%;
+    
+    
+
+}
+
+#comunidade .playlist {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    border: 3px solid rgba(1, 127, 204, 1);
+    border-radius: 20px;
+    -webkit-box-shadow: -2px 7px 18px -9px rgba(115, 43, 203, 1);
+        -moz-box-shadow: -2px 7px 18px -9px rgba(115, 43, 203, 1);
+        box-shadow: -10px 7px 18px -9px rgba(115, 43, 203, 1);
+    
+}

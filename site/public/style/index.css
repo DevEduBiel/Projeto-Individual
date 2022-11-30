@@ -1,18 +1,24 @@
 @import url(./global.css);
 
+html{
+    scroll-behavior: smooth;
+}
+
 body {
     background-size: 100vw;
     background-repeat: no-repeat;
     background-image: url(../assets/main.jpg);
 }
 
+
 .imgIcons {
     font-size: 35px;
 }
 
 .imgIconG {
-    font-size: 200px;
-    color: aqua;
+    font-size: 250px;
+    color: rgba(115, 43, 203, 1);
+    margin-bottom: 50px;
 }
 
 
@@ -118,7 +124,6 @@ body {
     border-radius: 15px;
     z-index: 1;
     padding: 3px;
-    mix-blend-mode: color-burn;
 }
 
 
@@ -149,6 +154,7 @@ body {
     border-radius: 100%;
 
 }
+
 
 /* ===== Tela Home ===== */
 #home {
@@ -386,7 +392,7 @@ body {
     justify-content: flex-start;
     width: 210px;
     height: 110px;
-    margin: 3% 10% 3% 0%;
+    margin: 4% 10% 3% 1%;
 
 }
 
@@ -396,9 +402,17 @@ body {
     justify-content: center;
     width: 100px;
     height: 100px;
-    border: 3px solid aqua;
+    border: 3px solid rgba(1, 127, 204, 1);
     border-radius: 20px;
     margin-right: 15px;
+}
+
+#playlist .nome {
+    display: flex;
+    align-items: center;
+    width: 90px;
+    height: 50px;
+   
 }
 
 #playlist .txtSubTexto {
@@ -421,10 +435,17 @@ body {
     justify-content: center;
     width: 200px;
     height: 200px;
-    border: 3px solid aqua;
+    border: 3px solid rgba(1, 127, 204, 1);
     border-radius: 20px;
 }
-
+#playlist .txtPlaylistSalva {
+    display: flex;
+    align-items: center;
+    width: 85%;
+    height: 55px;
+    border-bottom: 2px solid rgba(1, 127, 204, 1);
+    color: rgba(1, 127, 204, 1);
+}
 /* ===== Tela Comunidade ===== */
 #comunidade {
     display: flex;
@@ -468,7 +489,7 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     height: 90%;
-    width: 50%;
+    width: 60%;
     
 }
 
@@ -477,7 +498,7 @@ body {
     align-items: flex-end;
     justify-content: space-between;
     width: 90%;
-    height: 80%;
+    height: 90%;
     margin-left: 5%;
 }
 
@@ -485,7 +506,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 80%;
+    width: 100%;
     height: 36%;
 }
 

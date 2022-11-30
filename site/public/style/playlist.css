@@ -1,0 +1,270 @@
+@import url(./global.css);
+
+button{
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+.imgIconG {
+    font-size: 260px;
+    color: rgba(115, 43, 203, 1);
+    
+}
+
+.txtTitulo {
+    font-size: 40px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+.txtSubTitulo {
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(255, 255, 255);
+    
+}
+
+.txtTexto {
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+}
+
+.txtSubTexto {
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    margin-top: -5%;
+}
+.imgIcons {
+    font-size: 35px;
+}
+
+.imgIconPeq {
+    font-size: 25px;
+}
+/* ===== Barra de Navegacao ===== */
+#navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5% 0 0 3%;
+    position: fixed;
+    height: 410px;
+    width: 60px;
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+    z-index: 1;
+    padding: 3px;
+}
+
+
+#navbar .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 250px;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+#navbar .config {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 125px;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+#navbar .imgIcons {
+    padding: 5.5px;
+    border-radius: 100%;
+
+}
+
+#navbar input{
+    display: none;
+}
+
+/* ===== CheckBox ===== */
+
+#navbar .dislike  input + label:before {
+    content: '';
+    width: 35px;
+    height: 35px;
+    background: url('https://api.iconify.design/mdi/dislike-outline.svg?color=white&width=35&height=35') no-repeat center center / contain;
+    display: inline-block;
+}
+
+#navbar .dislike input:checked  + label:before {
+    background: url('https://api.iconify.design/mdi/dislike.svg?color=%23732bcb&width=30&height=30') no-repeat center center / contain;
+    display: inline-block;
+}
+
+#navbar .like input+label:before {
+    content: '';
+    width: 35px;
+    height: 35px;
+    background: url('https://api.iconify.design/mdi/like-outline.svg?color=white&width=30&height=30') no-repeat center center / contain;
+    display: inline-block;
+}
+
+#navbar .like input:checked+label:before {
+background: url('https://api.iconify.design/mdi/like.svg?color=%23732bcb&width=30&height=30') no-repeat center center / contain;
+}
+
+#navbar .fav input+label:before {
+    content: '';
+    width: 35px;
+    height: 35px;
+    background: url('https://api.iconify.design/mdi/heart-multiple-outline.svg?color=white&width=30&height=30') no-repeat center center / contain;
+    display: inline-block;
+}
+
+#navbar .fav input:checked+label:before {
+    background: url('https://api.iconify.design/mdi/heart-multiple.svg?color=%23732bcb&width=30&height=30') no-repeat center center / contain;
+    display: inline-block;
+}
+
+
+
+
+/* ===== Tela Playlist ===== */
+
+#playlist {
+    background-color: rgb(49, 49, 49);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+#playlist .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 85%;
+    height: 550px;
+    margin-left: 100px;
+}
+
+#playlist input{
+    all: unset;
+    background-color: rgba(16, 16, 16, 0.95);
+    border-radius: 20px;
+    width: 200px;
+    height: 30px;
+    
+}
+
+
+#playlist .tocaMusica {
+    width: 100%;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.69)
+}
+
+
+#playlist .pesquisaPlaylist {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+}
+
+#playlist .nomePlaylist {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 250px;
+    background-color: rgb(29, 29, 29);
+}
+
+#playlist .infoPlaylist{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 25%;
+    height: 100%;
+} 
+
+#playlist .addmusica{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 225px;
+    height: 30%;
+} 
+
+#playlist .avalia{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 20%;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(255, 255, 255);
+    
+} 
+
+#playlist #iconeAvalia{
+    display: flex;
+    width: 100%;
+    height: 25%;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgb(14, 14, 14);
+} 
+
+#playlist #musicasPlaylist {
+    width: 102%;
+    height: 200px;
+    overflow-y: scroll;
+    overflow: overlay;
+}
+
+#playlist .musicas {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 98%;
+    height: 40px;
+    border-radius: 20px;
+    background-color: rgba(16, 16, 16, 0.95);
+    margin-bottom: 4px;
+
+}
+
+#playlist #imgMusica {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 230px;
+    height: 250px;
+    background-color: black;
+    
+}
+
+#playlist .albumNomeArtista {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100px;
+    margin-left: 20px;
+}
