@@ -266,12 +266,25 @@ function verificarGenero() {
 
 function verificarTreino() {
   const treino = document.getElementById("treino");
-
-  //Verificar se o campo é nulo
-  if (treino == "") {
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-right',
+    iconColor: 'white',
+    customClass: {
+      popup: 'colored-toast'
+    },
+    showConfirmButton: false,
+    timer: 4000,
+    timerProgressBar: true
+  })
+  //Verificar qtd treino
+  if (treino.value > 14 || treino.value < 0){
+   Toast.fire({
+     icon: 'error',
+     title: 'Quantidade invalida de treino'
+   })
     return false;
   }
-
   //treino cadastrado
   else {
     return true;
@@ -348,13 +361,10 @@ function criarConta() {
 
     })
   }).then(function (resposta) {
-
-    console.log("resposta: ", resposta);
-
     if (resposta.ok) {
       Swal.fire({
         icon: 'success',
-        title: 'Your work has been saved',
+        title: 'Cadastro realizado com sucesso!!',
         showConfirmButton: false,
         timer: 2500
       })
@@ -364,7 +374,7 @@ function criarConta() {
 
     } else {
       Swal.fire({
-        title: 'Este Email já está cadastrado',
+        title: 'Ouve um erro ao cadastrar. Verifique se ste Email já está sendo cadastrado',
         icon: 'warning',
       }).then((result) => {
         if (result.isConfirmed) {

@@ -18,7 +18,7 @@ function playlistUsuario() {
                     sessionStorage.setItem('PLAYLISTS', JSON.stringify(vetorPlaylist));
                     document.getElementById("suaPlaylist").innerHTML = ""
                     document.getElementById("suaPlaylist").innerHTML += `<span class=" txtSubTitulo txtPlaylistSalva">Playlists criadas :</span>`
-                    document.getElementById("loginUsuario").style.display = 'none'
+                    document.getElementById("loginUsuario").innerHTML = '<span class="txtSubTitulo branco">BEM VINDO</span>'
                     for (var contador = 0; contador < vetorPlaylist.length; contador++) {
                         if (id == vetorPlaylist[contador].fkCriador) {
                             document.getElementById("suaPlaylist").innerHTML += `
@@ -146,3 +146,13 @@ function deslogar() {
     }
 }
 
+window.addEventListener('scroll', function () {
+    var navHome = document.querySelector('#navHome');
+    var navSobre = document.querySelector('#navSobre');
+    var navPlay = document.querySelector('#navPlay');
+    var navComu = document.querySelector('#navComu');
+    navHome.classList.toggle('sticky', window.scrollY > 400);
+    navSobre.classList.toggle('roxo', window.scrollY > 400 && window.scrollY <= 1050);
+    navPlay.classList.toggle('roxo', window.scrollY > 1050 && window.scrollY <= 1600);
+    navComu.classList.toggle('roxo', window.scrollY > 1600);
+})

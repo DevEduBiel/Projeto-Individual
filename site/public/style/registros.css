@@ -22,7 +22,7 @@ input {
     border-radius: 20px;
     width: 410px;
     height: 40px;
-    border: 2px solid rgba(115, 43, 203, 1);
+    border: 2px solid rgba(144, 0, 193, 1);
     font-size: 20px;
 
 }
@@ -83,7 +83,7 @@ button {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 110%;
-    border-left: 2px solid rgba(115, 43, 203, 1);
+    border-left: 2px solid rgba(144, 0, 193, 1);
 }
 
 .input {
@@ -115,7 +115,7 @@ button {
 .txtTitulo {
     font-size: 54px;
     font-family: 'Montserrat', sans-serif;
-    color: rgba(115, 43, 203, 1);
+    color: rgba(144, 0, 193, 1);
     font-weight: bold;
 }
 

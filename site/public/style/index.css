@@ -1,6 +1,11 @@
 @import url(./global.css);
 
 
+.sticky {
+    color: rgb(255, 255, 255);
+}
+
+
 /* ===== CARDS ===== */
 .my-validation-message::before {
     display: none;
@@ -30,7 +35,7 @@ body {
 
 .imgIconG {
     font-size: 250px;
-    color: rgba(115, 43, 203, 1);
+    color: rgba(144, 0, 193, 1);
     margin-bottom: 50px;
 }
 
@@ -38,7 +43,7 @@ body {
 .txtTitulo {
     font-size: 70px;
     font-family: 'Montserrat', sans-serif;
-    color: rgba(115, 43, 203, 1);
+    color: rgba(144, 0, 193, 1);
     font-weight: bold;
 }
 
@@ -231,6 +236,10 @@ body {
     margin-bottom: 10%;
 }
 
+#loginUsuario .txtSubTitulo{
+    color: rgba(144, 0, 193, 1);
+    font-size: 20px;
+}
 /* ===== Tela Sobre ===== */
 #sobre {
     display: flex;
@@ -396,7 +405,7 @@ body {
     justify-content: center;
     width: 32%;
     height: 85%;
-    border-left: 2px solid rgba(115, 43, 203, 1);
+    border-left: 2px solid rgba(144, 0, 193, 1);
 }
 
 #playlist .blocoPlay {

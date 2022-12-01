@@ -13,7 +13,7 @@ body {
 .txtTitulo {
     font-size: 55px;
     font-family: 'Montserrat', sans-serif;
-    color: rgba(115, 43, 203, 1);
+    color: rgba(144, 0, 193, 1);
     font-weight: bold;
     mix-blend-mode: color-burn;
 }
