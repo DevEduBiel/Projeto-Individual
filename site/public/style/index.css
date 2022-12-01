@@ -1,5 +1,18 @@
 @import url(./global.css);
 
+
+/* ===== CARDS ===== */
+.my-validation-message::before {
+    display: none;
+    width: 20px;
+}
+
+.my-validation-message i {
+    margin: 0 .4em;
+    color: #f27474;
+    font-size: 1.4em;
+}
+
 html{
     scroll-behavior: smooth;
 }
@@ -183,7 +196,7 @@ body {
 
 }
 
-#home .loginUsuario {
+#home #loginUsuario {
     display: flex;
     align-items: center;
     justify-content: space-evenly;

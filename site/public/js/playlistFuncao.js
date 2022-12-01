@@ -1,8 +1,49 @@
-id = localStorage.getItem('ID_USUARIO');
-idPlaylist = localStorage.getItem('ID_PLAYLIST');
+var id = localStorage.getItem('ID_USUARIO');
+var idPlaylist = localStorage.getItem('ID_PLAYLIST');
+
+function opcoesCriador() {
+    if (id != 0) {
+        fetch("/playlist/opcoesCriador", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idPlaylistServer: idPlaylist,
+            })
+        }).then(function (resposta) {
+            if (resposta.ok) {
+                console.log(resposta);
+                resposta.json().then(vetorCriador => {
+                    document.getElementById("nomePlaylist").innerHTML = vetorCriador[0].nome
+                    if (vetorCriador[0].fkCriador == id) {
+                        localStorage.CRIADOR = vetorCriador[0].fkCriador 
+                    } else{
+                        document.getElementById("addmusica").innerHTML = ''
+                    } 
+                }
+                );
+
+            } else {
+
+                console.log("Houve um erro ao pegar criador");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+    }
+    else {
+        Swal.fire('Faça login primeiro')
+    }
+}
 
 
-buscarAvalicao()
 function buscarAvalicao() {
     if (idPlaylist != 0) {
         fetch("/playlist/buscarAvalicao", {
@@ -16,10 +57,7 @@ function buscarAvalicao() {
             })
         }).then(function (resposta) {
             if (resposta.ok) {
-                console.log(resposta);
-                resposta.json().then(vetorAvaliacao => {
-                    console.log(vetorAvaliacao)
-                   
+                resposta.json().then(vetorAvaliacao => {       
                        if (vetorAvaliacao[0].favoritaUsu == 1) {
                            var checkbox = document.getElementById('fav');
                            checkbox.checked = true
@@ -70,8 +108,52 @@ function buscarAvalicao() {
 
 
 function deletarPlaylist() {
+    Swal.fire({
+        title: 'Você realmente excluir esta playlist?',
+        icon: 'warning',
+        showDenyButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sim',
+        denyButtonText: `Cancelar`,
+    }).then((result) => {
+        if (result.isConfirmed) {
+            if (id != 0) {
+                fetch("/playlist/deletarPlaylist", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        idServer: id,
+                        idPlaylistServer: idPlaylist
+                    })
+                }).then(function (resposta) {
+                    if (resposta.ok) {
+                        window.location = "index.html";
+
+                    } else {
+
+                        console.log("Houve um erro ao deletar a playlist");
+
+                        resposta.text().then(texto => {
+                            console.error(texto);
+                        });
+                    }
+
+                }).catch(function (erro) {
+                    console.log(erro);
+                })
+
+            }
+        }
+    })
+   
+}
+
+function salvarPlaylist() {
     if (id != 0) {
-        fetch("/playlist/deletarPlaylist", {
+        fetch("/playlist/salvarPlaylist", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -82,15 +164,20 @@ function deletarPlaylist() {
             })
         }).then(function (resposta) {
             if (resposta.ok) {
-                window.location = "index.html";
+                Swal.fire({
+                    title: 'Playlist salva',
+                    icon: 'success',
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'Voltar',
+                })
 
             } else {
-
-                console.log("Houve um erro ao deletar a playlist");
-
-                resposta.text().then(texto => {
-                    console.error(texto);
-                });
+                Swal.fire({
+                    title: 'Você já salvou esta playlist ',
+                    icon: 'error',
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'Voltar',
+                })
             }
 
         }).catch(function (erro) {
@@ -241,4 +328,6 @@ function deslogar() {
         })
     }
 }
+buscarAvalicao()
 
+opcoesCriador()

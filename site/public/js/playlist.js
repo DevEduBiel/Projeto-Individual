@@ -3,7 +3,7 @@ idPlaylist = localStorage.getItem('ID_PLAYLIST');
 playlistUsuario() 
 
 function playlistUsuario() {
-    if (id != 0) {     
+    if (id != 0) {  
         fetch("/playlist/mostrarPlaylist", {
             method: "POST",
             headers: {
@@ -14,13 +14,11 @@ function playlistUsuario() {
             })
         }).then(function (resposta) {
             if (resposta.ok) {
-                console.log(resposta);
                 resposta.json().then(vetorPlaylist => {
-                    console.log(vetorPlaylist);
                     sessionStorage.setItem('PLAYLISTS', JSON.stringify(vetorPlaylist));
                     document.getElementById("suaPlaylist").innerHTML = ""
                     document.getElementById("suaPlaylist").innerHTML += `<span class=" txtSubTitulo txtPlaylistSalva">Playlists criadas :</span>`
-
+                    document.getElementById("loginUsuario").style.display = 'none'
                     for (var contador = 0; contador < vetorPlaylist.length; contador++) {
                         if (id == vetorPlaylist[contador].fkCriador) {
                             document.getElementById("suaPlaylist").innerHTML += `
@@ -62,41 +60,59 @@ function playlistUsuario() {
         }).catch(function (erro) {
             console.log(erro);
         })
+        
     }
 }
 
 
 function criarPlaylist() {
     if (id != 0) {
-        fetch("/playlist/criarPlaylist", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
+        Swal.fire({
+            title: 'Qual nome da sua Playlist',
+            input: 'text',
+            customClass: {
+                validationMessage: 'my-validation-message'
             },
-            body: JSON.stringify({
-                idServer: id,
-            })
-        }).then(function (resposta) {
-            if (resposta.ok) {
-                console.log(resposta);
-                resposta.json().then(vetorPlaylist => {
-                    console.log(vetorPlaylist);
-                    window.location.reload(false);
+            preConfirm: (value) => {
+                if (!value) {
+                    Swal.showValidationMessage(
+                        '<i class="fa fa-info-circle"></i> Coloque um nome para sua playlist'
+                    )
+                }else{
+                    fetch("/playlist/criarPlaylist", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            idServer: id,
+                            nomeServer: value
+                        })
+                    }).then(function (resposta) {
+                        if (resposta.ok) {
+                            console.log(resposta);
+                            resposta.json().then(deletar => {
+                                window.location.reload(false);
+                            }
+                            );
+
+                        } else {
+
+                            console.log("Houve um erro ao pegar as playlists");
+
+                            resposta.text().then(texto => {
+                                console.error(texto);
+                            });
+                        }
+
+                    }).catch(function (erro) {
+                        console.log(erro);
+                    })
                 }
-                );
-
-            } else {
-
-                console.log("Houve um erro ao pegar as playlists");
-
-                resposta.text().then(texto => {
-                    console.error(texto);
-                });
             }
-
-        }).catch(function (erro) {
-            console.log(erro);
         })
+
+    
 
     }
     else {
@@ -123,11 +139,6 @@ function deslogar() {
             denyButtonText: `Cancelar`,
         }).then((result) => {
             if (result.isConfirmed) {
-                Swal.fire(
-                    'Sucesso',
-                    'Você saiu',
-                    'success'
-                )
                 localStorage.ID_USUARIO = 0
                 window.location = "index.html";
             }

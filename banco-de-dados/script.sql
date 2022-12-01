@@ -83,9 +83,9 @@ insert into musica_salva value
 (1,4);
 
 DELIMITER $$
-CREATE PROCEDURE CriarPlaylist(in idUsuario int)
+CREATE PROCEDURE CriarPlaylist(in idUsuario int, playnome varchar(45))
 BEGIN
-	 insert into playlist (nome, fkCriador)value ('playlist-teste',idUsuario);
+	 insert into playlist (nome, fkCriador)value (playnome,idUsuario);
 	 insert into playlist_salva value (idUsuario,(select max(idPlaylist) from playlist));
 END$$
 DELIMITER ;
@@ -123,20 +123,57 @@ BEGIN
 END$$
 DELIMITER ;
 
+DELIMITER $$
+CREATE PROCEDURE AdicionarMusica
+(in idPlaylist int, nomeMus varchar(45), generoMus varchar(45), artistaMus varchar(45), albumMus varchar(45), duracaoMus time)
+BEGIN
+	 insert into musica value (null, nomeMus, generoMus, artistaMus, albumMus, duracaoMus);
+	 insert into musica_salva value (idPlaylist,(select max(idMusica) from musica));
+END$$
+DELIMITER ;
+
+
 call marcarFav(1,1,true);
 
 call marcarLike(1,1,true);
 
 call marcarDislike(1,1,false);
 
+call AdicionarMusica(1, 'musica-10','rock','Banda','RockBom', '03:22');
+
+select * from musica; 
+
 select 
-(select favoritaUsu from avaliacao where fkUsuario =1 and fkPlaylist =5)favoritaUsu,
-(select dislikeUsu from avaliacao where fkUsuario =1 and fkPlaylist =5)dislikeUsu,
-(select likeUsu from avaliacao where fkUsuario =1 and fkPlaylist =5)likeUsu,
-(select count(favoritaUsu) from avaliacao where favoritaUsu= 1 and fkPlaylist = 5 )qtdFav, 
-(select count(dislikeUsu) from avaliacao where dislikeUsu= 1 and fkPlaylist = 5)qtdDislike, 
-(select count(likeUsu) from avaliacao where likeUsu= 1 and fkPlaylist = 5) qtdLike
-from avaliacao where fkPlaylist = 3;
+(select favoritaUsu from avaliacao where fkUsuario =1 and fkPlaylist =1)favoritaUsu,
+(select dislikeUsu from avaliacao where fkUsuario =1 and fkPlaylist =1)dislikeUsu,
+(select likeUsu from avaliacao where fkUsuario =1 and fkPlaylist =1)likeUsu,
+(select count(favoritaUsu) from avaliacao where favoritaUsu= 1 and fkPlaylist = 1 )qtdFav, 
+(select count(dislikeUsu) from avaliacao where dislikeUsu= 1 and fkPlaylist = 1)qtdDislike, 
+(select count(likeUsu) from avaliacao where likeUsu= 1 and fkPlaylist = 1) qtdLike
+from avaliacao where fkPlaylist = 1;
  
+select p.idPlaylist, p.nome , count(favoritaUsu)qtdFav from playlist p
+join avaliacao a on p.idPlaylist = a.fkPlaylist
+where favoritaUsu = 1
+group by p.idPlaylist
+order by qtdFav desc;
+
+select p.idPlaylist, p.nome , count(likeUsu)qtdLike from playlist p
+join avaliacao a on p.idPlaylist = a.fkPlaylist
+where likeUsu = 1
+group by p.idPlaylist
+order by qtdLike desc;
+
+select p.idPlaylist, p.nome , count(dislikeUsu)qtdDislike from playlist p
+join avaliacao a on p.idPlaylist = a.fkPlaylist
+where dislikeUsu = 1
+group by p.idPlaylist
+order by qtdDislike desc;
+
+select idPlaylist, nome from playlist 
+group by idPlaylist
+order by idPlaylist desc;
+
+select * from Playlist;
 
 

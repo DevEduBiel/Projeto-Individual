@@ -9,10 +9,20 @@ function buscaPlaylist(idUsuario) {
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
-function criarPlaylist(idUsuario) {
+
+function opcoesCriador(idplaylist) {
 
     var instrucao = `
-    call CriarPlaylist(${idUsuario});
+    select fkCriador, nome from playlist where idPlaylist = ${idplaylist};
+        `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function criarPlaylist(idUsuario, nome) {
+
+    var instrucao = `
+    call CriarPlaylist(${idUsuario},'${nome}');
         `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -22,6 +32,15 @@ function deletarPlaylist(idUsuario, idPlaylist) {
 
     var instrucao = `
     delete from playlist_salva where fkUsuario = ${idUsuario} and fkPlaylist = ${idPlaylist};
+        `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function salvarPlaylist(idUsuario, idPlaylist) {
+
+    var instrucao = `
+    insert into playlist_salva value (${idUsuario}, ${idPlaylist});
         `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -78,6 +97,8 @@ module.exports = {
     deletarPlaylist,
     marcarFav,
     marcarLike,
-    marcarDislike
+    marcarDislike,
+    opcoesCriador,
+    salvarPlaylist
 
 }
