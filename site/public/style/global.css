@@ -146,7 +146,7 @@ table {
 }
 
 .roxo {
-    color: rgba(115, 43, 203, 1);
+    color: rgba(144, 0, 193, 1);
 }
 
 /* ===== Scrollbar CSS ===== */
@@ -163,6 +163,32 @@ table {
 
 *::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    border: 2px solid rgba(115, 43, 203, 1);
+    border: 2px solid rgba(144, 0, 193, 1);
+
+}
+
+button{
+    background-color: rgba(144, 0, 193, 1);
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    border: none;
+}
+button:hover{
+    background-color: rgb(140, 94, 197);
+}
+
+#navbar a {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar a:hover {
+    border-radius: 100%;
+    background-color: rgb(36, 36, 36);
 
 }

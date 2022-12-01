@@ -3,6 +3,22 @@ function autenticar() {
     var senhaVar = senha.value;
 
     if (emailVar == "" || senhaVar == "") {
+
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-right',
+            iconColor: 'white',
+            customClass: {
+                popup: 'colored-toast'
+            },
+            showConfirmButton: false,
+            timer: 4000,
+            timerProgressBar: true
+        })
+        Toast.fire({
+            icon: 'error',
+            title: 'Os campos estão vazios, preencha corretamente '
+        })
         return false;
     }
     else {
@@ -36,20 +52,48 @@ function autenticar() {
                 localStorage.ID_USUARIO = vetorUsuario.idUsuario;
 
                 window.location = "index.html";
+                
+                
             }
             );
 
         } else {
 
-            console.log("Houve um erro ao tentar realizar o login!");
-
-            resposta.text().then(texto => {
-                console.error(texto);
-            });
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-right',
+                iconColor: 'white',
+                customClass: {
+                    popup: 'colored-toast'
+                },
+                showConfirmButton: false,
+                timer: 4000,
+                timerProgressBar: true
+            })
+            Toast.fire({
+                icon: 'error',
+                title: 'Email ou senha estão incorretos!!'
+            })
         }
 
     }).catch(function (erro) {
         console.log(erro);
     })
 
+}
+
+function mostrarSenha() {
+    const mostrar = document.getElementById("senha");
+
+
+    // Se o botão for selecionado, ele mostrará a senha
+    if (mostrar.type == "password") {
+        mostrar.type = "text";
+
+    }
+
+    // Se o botão for desselecionado, ele esconderá a senha
+    else {
+        mostrar.type = "password";
+    }
 }

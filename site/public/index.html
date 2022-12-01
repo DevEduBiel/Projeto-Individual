@@ -7,7 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GYMusic</title>
     <link rel="stylesheet" href="./style/index.css">
-    <script src="./js/index.js"></script>
+    <script src="./js/playlist.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 
 </head>
 
@@ -15,21 +18,21 @@
 
     <div id="navbar">
         <div class="menu">
-            <a href="./login.html">
-                <iconify-icon icon="akar-icons:home-alt1" class="imgIcons branco"></iconify-icon>
+            <a class="slide-right" href="#home" >
+                <iconify-icon id="navHome"  icon="akar-icons:home-alt1" class="imgIcons roxo"></iconify-icon>
             </a>
-            <a href="">
-                <iconify-icon icon="iconoir:gym" class="imgIcons branco"></iconify-icon>
+            <a href="#sobre">
+                <iconify-icon id="navSobre"  icon="iconoir:gym" class="imgIcons branco"></iconify-icon>
             </a>
-            <a href="">
-                <iconify-icon icon="ic:round-headset" class="imgIcons branco"></iconify-icon>
+            <a href="#playlist">
+                <iconify-icon id="navPlay" icon="ic:round-headset" class="imgIcons branco"></iconify-icon>
             </a>
-            <a href="">
-                <iconify-icon icon="bx:bar-chart-alt" class="imgIcons branco"></iconify-icon>
+            <a href="#comunidade">
+                <iconify-icon id="navComu" icon="bx:bar-chart-alt" class="imgIcons branco"></iconify-icon>
             </a>
         </div>
         <div class="config">
-            <a href="">
+            <a href="https://www.techtudo.com.br/noticias/2018/01/spotify-revela-melhores-musicas-para-malhar-veja-lista.ghtml">
                 <iconify-icon icon="bi:gear" class="imgIcons azul"></iconify-icon>
             </a>
             <a onclick="deslogar()">
@@ -41,7 +44,7 @@
         <div class="container">
             <header>
                 <img src="./assets/home-logo.png" alt="" class="imgLogo">
-                <div class="loginUsuario">
+                <div id="loginUsuario">
                     <a href="./cadastro.html">
                         <iconify-icon icon="fluent:person-add-16-filled" class="imgIcons botaoLogin azul">
                         </iconify-icon>
@@ -59,7 +62,7 @@
                     Entre <br>No Seu Universo
                 </span>
                 <span class="txtSubTitulo">
-                    Treine do seu jeito
+                    Treine do deu jeito
                 </span>
                 <span class="txtTexto">
                     Crie playlists e compartilhe com o mundo.
@@ -88,10 +91,10 @@
                                     Vindo
                                 </span>
                                 <span class="txtSubTexto">
-                                    Hora do Show
+                                    Hora do show!!!
                                 </span>
                                 <span class="txtSubTitulo">
-                                    Treine do seu jeito
+                                    Objetivo do site
                                 </span>
                             </div>
                             <div class="img">
@@ -99,11 +102,9 @@
                             </div>
                         </div>
                         <span class="txtTexto">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a ultricies eros. Praesent
-                            sit
-                            amet ligula orci. Mauris
-                            ac justo at turpis lacinia malesuada at vitae arcu. Proin sem urna, suscipit a luctus in,
-                            volutpat sed odio.
+                            Este site foi feito para os amantes de academia que adoram escutar música, aqui você poderá criar suas próprias
+                            playlists e salvar playlists de outros usuários. Sabemos o quanto e difícil treinar sem uma música boa, então avalie
+                            suas faixas favoritas e compartilhe ao mundo seus gostos.
                         </span>
                     </div>
                 </div>
@@ -167,24 +168,26 @@
                                 Comunidade
                             </span>
                             <span class="txtSubTitulo">
-                                Treine do seu jeito
+                               Outros mundos?
                             </span>
                             <span class="txtSubTexto">
-                                Hora do Show
+                                Vamos navegar!!!
                             </span>
                         </div>
                         <span class="txtTexto">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a ultricies eros. Praesent
-                            sit
-                            amet ligula orci. Mauris
-                            ac justo at turpis lacinia malesuada at vitae arcu. Proin sem urna, suscipit a luctus in,
-                            volutpat sed odio.
+                Nesta aba você poderá ver as playlists mais curtidas no momento. Aqui você poderá avaliar e
+                salvar quantas playlists quiser, mas não esqueça playlists salvas só
+                podem ser alteradas pelo seu criado.
+                Boa sorte em suas novas descobertas.
+
+
+
                         </span>
                     </div>
-                    <img src="./assets/comunidade-boombox.png" alt="" height="65%">
+                    <img src="./assets/comunidade-boombox.png" alt="" height="65%" style="margin-bottom:40px ; margin-left: 5px;">
                 </div>
                 <div class="botao">
-                    <button onclick="apaga()">Explorar</button>
+                    <a href="comunidade.html"><button>Explorar</button></a>
                 </div>
             </div>
             <div class="post">

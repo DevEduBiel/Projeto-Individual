@@ -1,0 +1,179 @@
+@import url(./global.css);
+
+body {
+    background-size: 100vw;
+    background-repeat: no-repeat;
+    background-image: url(../assets/main.jpg);
+}
+
+.imgIcons {
+    font-size: 55px;
+}
+
+.txtTitulo {
+    font-size: 55px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgba(144, 0, 193, 1);
+    font-weight: bold;
+    mix-blend-mode: color-burn;
+}
+
+.txtSubTitulo {
+    font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgba(1, 127, 204, 1);
+    font-weight: bold;
+}
+
+.txtTexto {
+    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(255, 123, 0);
+    font-weight: bold;
+}
+
+.txtSubTexto {
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+.txtPrincipal {
+    display: flex;
+    align-items: flex-end;
+    height: 90px;
+    width: 90%;
+}
+
+.linhas {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 50px;
+    mix-blend-mode: color-burn;
+}
+
+.linhas .l {
+    width: 40%;
+    border-bottom: 3px solid rgba(1, 127, 204, 1);
+}
+
+/* ===== Tela comunidade ===== */
+#comunidade {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+}
+
+#comunidade .inicio {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#comunidade .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 2500px;
+}
+
+#comunidade .top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 450px;
+    -webkit-box-shadow: -2px 7px 18px -9px rgba(0, 0, 0, 0.69);
+    -moz-box-shadow: -2px 7px 18px -9px rgba(0, 0, 0, 0.69);
+    box-shadow: -2px 7px 18px -9px rgba(0, 0, 0, 0.69);
+    background-color: rgb(255, 255, 255);
+
+}
+
+
+#comunidade .topPlay {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-image: url(../assets/registro.png);
+    background-size: 100%;
+    overflow-x: scroll;
+
+}
+
+#comunidade .blocoPlay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 200px;
+    padding-left: 40px;
+    padding-right: 40px;
+    height: 280px;
+    margin: 0% 4% 0% 4%;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.493);
+    -webkit-box-shadow: -2px 7px 18px -9px rgba(0, 0, 0, 0.69);
+    -moz-box-shadow: -2px 7px 18px -9px rgba(0, 0, 0, 0.69);
+    box-shadow: -2px 7px 18px -9px rgba(0, 0, 0, 0.69);
+
+
+}
+
+#comunidade .playlist {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 125px;
+    height: 125px;
+    padding: 37.5px;
+    border: 3px solid rgba(1, 127, 204, 1);
+    border-radius: 20px;
+    -webkit-box-shadow: -2px 7px 18px -9px rgba(115, 43, 203, 1);
+    -moz-box-shadow: -2px 7px 18px -9px rgba(115, 43, 203, 1);
+    box-shadow: -10px 7px 18px -9px rgba(115, 43, 203, 1);
+    margin-top: -10px;
+
+}
+
+#comunidade .rank {
+    width: 80%;
+    margin-left: -80px;
+}
+
+#playTudo {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+#playTudo .blocoPlay {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    padding: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+-webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    background-color: rgba(1, 127, 204, 0);
+
+}
+
+#playTudo .playlist {
+background-color: rgba(255, 255, 255, 0.575);
+
+}

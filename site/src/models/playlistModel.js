@@ -2,35 +2,103 @@ var database = require("../database/config")
 function buscaPlaylist(idUsuario) {
 
     var instrucao = `
-        SELECT p.idPlaylist, p.nome  FROM playlist p join usuario u 
-        on p.fkCriador = u.idUsuario WHERE u.idUsuario = '${idUsuario}';
+       select p.* from playlist p
+       join playlist_salva ps on p.idPlaylist = ps.fkPlaylist
+       where ps.fkUsuario = '${idUsuario}';
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
-function criarPlaylist
-    (idUsuario) {
+
+function opcoesCriador(idplaylist) {
 
     var instrucao = `
-        INSERT INTO playlist (nome, likes, deslikes, favorita, fkCriador) VALUES ('teste', '0', '0', '0', '${idUsuario}');
-    `;
+    select fkCriador, nome from playlist where idPlaylist = ${idplaylist};
+        `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
 
-function mostraMusica
-    (idUsuario, idPlaylist) {
+function criarPlaylist(idUsuario, nome) {
 
     var instrucao = `
-        select m.* from musica m join playlist_musica p
-        on m.idMusica = p.fkMusica where p.fkCriador = '${idUsuario}' and p.fkPlaylist = '${idPlaylist}';
-    `;
+    call CriarPlaylist(${idUsuario},'${nome}');
+        `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
+
+function deletarPlaylist(idUsuario, idPlaylist) {
+
+    var instrucao = `
+    delete from playlist_salva where fkUsuario = ${idUsuario} and fkPlaylist = ${idPlaylist};
+        `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function salvarPlaylist(idUsuario, idPlaylist) {
+
+    var instrucao = `
+    insert into playlist_salva value (${idUsuario}, ${idPlaylist});
+        `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function marcarFav(usuario, playlist, marcar) {
+
+    var instrucao = `
+    call marcarFav(${usuario},${playlist},${marcar});
+        `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function marcarLike(usuario, playlist, marcar) {
+
+    var instrucao = `
+    call marcarLike(${usuario},${playlist},${marcar});
+        `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function marcarDislike(usuario, playlist, marcar) {
+
+    var instrucao = `
+    call marcarDislike(${usuario},${playlist},${marcar});
+        `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function buscarAvalicao(idPlaylist, idUsuario) {
+
+    var instrucao = `
+    select 
+    (select favoritaUsu from avaliacao where fkUsuario =${idUsuario} and fkPlaylist =${idPlaylist})favoritaUsu,
+    (select dislikeUsu from avaliacao where fkUsuario =${idUsuario} and fkPlaylist =${idPlaylist})dislikeUsu,
+    (select likeUsu from avaliacao where fkUsuario =${idUsuario} and fkPlaylist =${idPlaylist})likeUsu,
+    (select count(favoritaUsu) from avaliacao where favoritaUsu= 1 and fkPlaylist = ${idPlaylist} )qtdFav, 
+    (select count(dislikeUsu) from avaliacao where dislikeUsu= 1 and fkPlaylist = ${idPlaylist})qtdDislike, 
+    (select count(likeUsu) from avaliacao where likeUsu= 1 and fkPlaylist = ${idPlaylist}) qtdLike
+    from avaliacao where fkPlaylist = ${idPlaylist};
+        `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 
 module.exports = {
     buscaPlaylist,
+    buscarAvalicao,
     criarPlaylist,
-    mostraMusica
+    deletarPlaylist,
+    marcarFav,
+    marcarLike,
+    marcarDislike,
+    opcoesCriador,
+    salvarPlaylist
+
 }
