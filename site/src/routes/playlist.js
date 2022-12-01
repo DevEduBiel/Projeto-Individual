@@ -15,6 +15,10 @@ router.post("/deletarPlaylist", function (req, res) {
     playlistUsuario.deletarPlaylist(req, res);
 })
 
+router.post("/salvarPlaylist", function (req, res) {
+    playlistUsuario.salvarPlaylist(req, res);
+})
+
 router.post("/marcarFav", function (req, res) {
     playlistUsuario.marcarFav(req, res);
 })
@@ -29,6 +33,10 @@ router.post("/marcarDislike", function (req, res) {
 
 router.post("/buscarAvalicao", function (req, res) {
     playlistUsuario.buscarAvalicao(req, res);
+})
+
+router.post("/opcoesCriador", function (req, res) {
+    playlistUsuario.opcoesCriador(req, res);
 })
 
 module.exports = router;

@@ -11,6 +11,10 @@ router.post("/deletarMusica", function (req, res) {
     MusicaUsuario.deletarMusica(req, res);
 })
 
+router.post("/adicionarMusica", function (req, res) {
+    MusicaUsuario.adicionarMusica(req, res);
+})
+
 
 
 module.exports = router;

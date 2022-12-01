@@ -5,7 +5,7 @@ body {
     background-repeat: no-repeat;
     background-image: url(../assets/registro.png);
 }
-
+/* ===== CARDS ===== */
 .colored-toast.swal2-icon-success {
     background-color: #00ff4c !important;
 }
@@ -13,6 +13,8 @@ body {
 .colored-toast.swal2-icon-error {
     background-color: #f27474 !important;
 }
+
+/* ===== Global===== */
 
 input {
     text-decoration: none;
@@ -146,6 +148,16 @@ button {
     width: 100vw;
 }
 
+.metade input {
+    width: 195px;
+}
+
+.metade .input {
+    height: 100%;
+
+}
+
+/* ===== Tela Login===== */
 #login .imagem {
     background-image: url(../assets/login.png);
     background-size: cover;
@@ -155,6 +167,7 @@ button {
     height: 45%;
 }
 
+/* ===== Tela Cadastro===== */
 #cadastro .imagem {
     background-image: url(../assets/cadastro.jpg);
     background-size: cover;
@@ -164,6 +177,7 @@ button {
     height: 60%;
 }
 
+/* ===== Tela Informacoes===== */
 #informacoes .imagem {
     background-image: url(../assets/informacoes.jpg);
     background-size: cover;
@@ -178,13 +192,4 @@ button {
     width: 90%;
     height: 45%;
     justify-content: space-between;
-}
-
-.metade input {
-    width: 195px;
-}
-
-.metade .input {
-    height: 100%;
-
 }

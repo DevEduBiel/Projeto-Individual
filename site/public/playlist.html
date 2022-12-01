@@ -34,7 +34,7 @@
             </a>
         </div>
         <div class="config">
-            <a href="">
+            <a href="https://www.techtudo.com.br/noticias/2018/01/spotify-revela-melhores-musicas-para-malhar-veja-lista.ghtml">
                 <iconify-icon icon="bi:gear" class="imgIcons azul"></iconify-icon>
             </a>
             <a onclick="deslogar()">
@@ -46,6 +46,10 @@
         <div class="container">
             <div class="pesquisaPlaylist">
                 <span id="nomePlaylist" class="txtTitulo"></span>
+                <div class="botoes">
+                    <a href="index.html"><span class="txtSubTitulo">Voltar</span></a>
+                    <button onclick="salvarPlaylist()">Salvar playlist</button>
+                </div>
             </div>
             <div class="nomePlaylist">
                 <div id="imgMusica">
@@ -56,25 +60,26 @@
                     <span id="artista" class="txtSubTitulo"></span>
                     <span id="album" class="txtSubTitulo" style="padding-top:20px ;"></span>
                 </div>
-            <div class="infoPlaylist">
-                <div id="iconeAvalia">
-                    <div class="avalia">
-                        <iconify-icon icon="mdi:heart-multiple" class="imgIcons" style="color: rgb(111, 0, 255);"></iconify-icon>
-                        <span>0</span>
+                <div class="infoPlaylist">
+                    <div id="iconeAvalia">
+                        <div class="avalia">
+                            <iconify-icon icon="mdi:heart-multiple" class="imgIcons" style="color: rgb(111, 0, 255);">
+                            </iconify-icon>
+                            <span>0</span>
+                        </div>
+                        <div class="avalia">
+                            <iconify-icon icon="mdi:like" class="imgIcons" style="color: green;"></iconify-icon>
+                            <span>0</span>
+                        </div>
+                        <div class="avalia">
+                            <iconify-icon icon="mdi:dislike" class="imgIcons" style="color: red;"></iconify-icon>
+                            <span>0</span>
+                        </div>
                     </div>
-                    <div class="avalia">
-                        <iconify-icon icon="mdi:like" class="imgIcons" style="color: green;"></iconify-icon>
-                        <span>0</span>
-                    </div>
-                    <div class="avalia">
-                        <iconify-icon icon="mdi:dislike" class="imgIcons" style="color: red;"></iconify-icon>
-                        <span>0</span>
+                    <div id="addmusica">
+                        <button onclick="adicionarMusica()">Adicionar musica</button>
                     </div>
                 </div>
-                <div class="addmusica">
-                    <button>Adicionar musica</button>
-                </div>
-            </div>
             </div>
             <div id="musicasPlaylist">
             </div>
