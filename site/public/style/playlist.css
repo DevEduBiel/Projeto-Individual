@@ -8,7 +8,7 @@ button {
 
 .imgIconG {
     font-size: 260px;
-    color: rgba(115, 43, 203, 1);
+    color: rgba(144, 0, 193, 1);
 
 }
 
@@ -109,7 +109,7 @@ button {
 }
 
 #navbar .dislike input:checked+label:before {
-    background: url('https://api.iconify.design/mdi/dislike.svg?color=%23732bcb&width=30&height=30') no-repeat center center / contain;
+    background: url('https://api.iconify.design/mdi/dislike.svg?color=%239000c1&width=30&height=30') no-repeat center center / contain;
     display: inline-block;
 }
 
@@ -122,7 +122,7 @@ button {
 }
 
 #navbar .like input:checked+label:before {
-    background: url('https://api.iconify.design/mdi/like.svg?color=%23732bcb&width=30&height=30') no-repeat center center / contain;
+    background: url('https://api.iconify.design/mdi/like.svg?color=%239000c1&width=30&height=30') no-repeat center center / contain;
 }
 
 #navbar .fav input+label:before {
@@ -134,7 +134,7 @@ button {
 }
 
 #navbar .fav input:checked+label:before {
-    background: url('https://api.iconify.design/mdi/heart-multiple.svg?color=%23732bcb&width=30&height=30') no-repeat center center / contain;
+    background: url('https://api.iconify.design/mdi/heart-multiple.svg?color=%239000c1&width=30&height=30') no-repeat center center / contain;
     display: inline-block;
 }
 

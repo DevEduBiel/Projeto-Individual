@@ -74,7 +74,7 @@ function buscarAvalicao() {
                        }
 
                     document.getElementById('iconeAvalia').innerHTML = `<div class="avalia">
-                <iconify-icon icon="mdi:heart-multiple" class="imgIcons" style="color: rgb(111, 0, 255);"></iconify-icon>
+                <iconify-icon icon="mdi:heart-multiple" class="imgIcons" style="color: rgba(144, 0, 193, 1);"></iconify-icon>
                 <span>${vetorAvaliacao[0].qtdFav}</span>
             </div>
             <div class="avalia">
